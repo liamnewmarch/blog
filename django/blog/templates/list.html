@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="cards">
+    <div class="container">
+      <h2 class="cards-title">Blog posts</h2>
+      <ul class="cards-list">
+        {% for blog_post in blog_posts %}
+          <li class="cards-list-item">
+            <div class="card">
+              <h3 class="card-title">{{ blog_post.title }}</h3>
+              <p>{{ blog_post.summary }}</p>
+              <div class="card-links">
+                <a class="button-link button-link-primary" href="{% url 'blog-post-detail' slug=blog_post.slug %}">
+                  View article
+                </a>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

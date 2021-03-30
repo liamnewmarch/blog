@@ -1,0 +1,37 @@
+indexes:
+  - kind: django_admin_log
+    properties:
+      - name: user_id
+      - name: action_time
+        direction: desc
+  - kind: blog_post
+    properties:
+      - name: __key__
+        direction: desc
+      - name: published
+        direction: desc
+      - name: visibility
+  - kind: blog_post
+    properties:
+      - name: published
+        direction: desc
+      - name: visibility
+  - kind: blog_post
+    properties:
+      - name: published
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: blog_post
+    properties:
+      - name: visibility
+      - name: published
+        direction: desc
+  - kind: pages_home
+    properties:
+      - name: __key__
+        direction: desc
+  - kind: projects_project
+    properties:
+      - name: __key__
+        direction: desc

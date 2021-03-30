@@ -1,0 +1,4 @@
+cron:
+  - description: keep instance alive
+    schedule: every 15 minutes
+    url: /

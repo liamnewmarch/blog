@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  datastore:
+    command:
+      - gcloud
+      - beta
+      - emulators
+      - datastore
+      - start
+      - --data-dir=/opt/data
+      - --host-port=datastore:8081
+    environment:
+      - CLOUDSDK_CORE_PROJECT=project
+    image: google/cloud-sdk:emulators
+    init: true
+    ports:
+      - 8081:8081
+    restart: unless-stopped
+    volumes:
+      - datastore:/opt/data
+
+  django:
+    build: ./django
+    depends_on:
+      - datastore
+    env_file: .env
+    environment:
+      - CLOUDSDK_CORE_PROJECT=project
+      - DATASTORE_EMULATOR_HOST=datastore:8081
+      - DATASTORE_EMULATOR_HOST_PATH=datastore:8081/datastore
+      - DATASTORE_HOST=datastore:8081
+      - DJANGO_DEBUG=True
+      - DJANGO_ALLOWED_HOSTS=django,localhost
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./django:/usr/src/app:cached
+      - static:/usr/src/app/static
+
+  static:
+    build: ./static
+    environment:
+      - NODE_ENV=development
+    ports:
+      - 3000:3000
+      - 3001:3001
+    restart: unless-stopped
+    volumes:
+      - ./static:/usr/src/app:cached
+      - static:/usr/src/app/build
+      - node_modules:/usr/src/app/node_modules
+
+volumes:
+  datastore:
+  node_modules:
+  static:

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">{{ page.title }}</h1>
+      <p class="hero-intro">{{ page.intro }}</p>
+    </div>
+  </header>
+
+  <section class="cards" id="projects">
+    <div class="container">
+      <h2 class="cards-title">Featured projects</h2>
+      <ul class="cards-list">
+        {% for project in page.featured_projects %}
+          <li class="cards-list-item">
+            <div class="card">
+              <h3 class="card-title">{{ project.title }}</h3>
+              <p>{{ project.summary }}</p>
+              <div class="card-links">
+                <a class="button-link icon-after" data-icon="code" href="{{ project.source_url }}">
+                  GitHub
+                </a>
+                <a class="button-link button-link-primary" href="{{ project.project_url }}">
+                  View project
+                </a>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="cards-more">
+        <a class="button-link" href="https://github.com/liamnewmarch">See more on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="container">
+      <h2 class="cards-title">Latest articles</h2>
+      <ul class="cards-list">
+        {% for blog_post in blog_posts %}
+          <li class="cards-list-item">
+            <div class="card">
+              <h3 class="card-title">{{ blog_post.title }}</h3>
+              <p>{{ blog_post.summary }}</p>
+              <div class="card-links">
+                <a class="button-link button-link-primary" href="{% url 'blog-post-detail' slug=blog_post.slug %}">
+                  View article
+                </a>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="links">
+    <div class="container">
+      <h2>Around the web</h2>
+      <ul class="links-list">
+        <li class="links-list-item">
+          <a class="link" href="https://codepen.io/liamnewmarch/">CodePen</a></li>
+        <li class="links-list-item">
+          <a class="link" href="https://github.com/liamnewmarch?tab=repositories">GitHub</a>
+        </li>
+        <li class="links-list-item">
+          <a class="link" href="https://twitter.com/liamnewmarch">Twitter</a></li>
+        <li class="links-list-item">
+          <a class="link" href="https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}

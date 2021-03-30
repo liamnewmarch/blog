@@ -3,16 +3,51 @@ options:
     - NODE_ENV=production
 steps:
   - name: node:14-alpine
-    entrypoint: npm
+    dir: static
     args:
-      - ci
+      - npm
+      - clean-install
   - name: node:14-alpine
-    entrypoint: npm
+    dir: static
     args:
+      - npm
       - run
       - build
-  - name: node:14-alpine
-    entrypoint: npx
+    volumes:
+      - name: static
+        path: /workspace/static/build
+  - name: python:3.7-slim
+    dir: django
     args:
-      - firebase-tools
+      - pip
+      - install
+      - --requirement=requirements.txt
+      - --user
+    volumes:
+      - name: static
+        path: /workspace/django/static
+  - name: python:3.7-slim
+    dir: django
+    args:
+      - python
+      - manage.py
+      - collectstatic
+      - --no-input
+    volumes:
+      - name: static
+        path: /workspace/django/static
+  - name: google/cloud-sdk:alpine
+    dir: django
+    args:
+      - gcloud
+      - app
       - deploy
+      - app.yaml
+      - cron.yaml
+      - index.yaml
+      - --version=live
+      - --no-promote
+      - --quiet
+    volumes:
+      - name: static
+        path: /workspace/django/static

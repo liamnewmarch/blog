@@ -26,7 +26,6 @@ services:
       - datastore
     env_file: .env
     environment:
-      - CLOUDSDK_CORE_PROJECT=project
       - DATASTORE_EMULATOR_HOST=datastore:8081
       - DATASTORE_EMULATOR_HOST_PATH=datastore:8081/datastore
       - DATASTORE_HOST=datastore:8081

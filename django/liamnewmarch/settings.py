@@ -4,9 +4,7 @@ from pathlib import Path
 
 from django.core.management.utils import get_random_secret_key
 
-
 from .google_cloud import apply_datastore_env_vars, setup_cloud_logging
-
 
 CLOUDSDK_CORE_PROJECT = os.environ.get('CLOUDSDK_CORE_PROJECT')
 

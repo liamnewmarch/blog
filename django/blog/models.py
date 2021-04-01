@@ -1,9 +1,11 @@
 import datetime
 
+from markdown import markdown
+
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 from django.utils.functional import cached_property
-from markdown import markdown
 
 
 class Post(models.Model):
@@ -48,6 +50,11 @@ class Post(models.Model):
             'codehilite',
             'fenced_code',
         ))
+
+    def get_absolute_url(self):
+        return reverse('blog-post-detail', kwargs={
+            'slug': self.slug,
+        })
 
     def save(self, *args, **kwargs):
         if not self.slug:

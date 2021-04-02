@@ -1,4 +1,4 @@
-from google.cloud import datastore, logging
+import os
 
 
 def apply_datastore_env_vars(project):
@@ -6,7 +6,8 @@ def apply_datastore_env_vars(project):
 
     Each `env_var` entity should have two string properties, `key` and `value`.
     """
-    for entity in datastore.Client(project).query(kind='env_var').fetch():
+    from google.cloud.datastore import Client
+    for entity in Client(project).query(kind='env_var').fetch():
         key = str(entity['key'])
         value = str(entity['value'])
         os.environ.setdefault(key, value)
@@ -16,6 +17,7 @@ def setup_cloud_logging():
     """Attaches Google Cloud Logging to the root logger.
 
     https://cloud.google.com/logging/docs/setup/python"""
-    logging_client = logging.Client()
-    logging_client.get_default_handler()
-    logging_client.setup_logging()
+    from google.cloud.logging import Client
+    logging = Client()
+    logging.get_default_handler()
+    logging.setup_logging()

@@ -6,10 +6,10 @@ from django.core.management.utils import get_random_secret_key
 
 from .google_cloud import apply_datastore_env_vars, setup_cloud_logging
 
-CLOUDSDK_CORE_PROJECT = os.environ.get('CLOUDSDK_CORE_PROJECT')
+GOOGLE_CLOUD_PROJECT = os.environ.get('GOOGLE_CLOUD_PROJECT')
 
-if CLOUDSDK_CORE_PROJECT:
-    apply_datastore_env_vars(CLOUDSDK_CORE_PROJECT)
+if GOOGLE_CLOUD_PROJECT:
+    apply_datastore_env_vars(GOOGLE_CLOUD_PROJECT)
 
 try:
     DEBUG = bool(strtobool(os.environ.get('DJANGO_DEBUG', '')))

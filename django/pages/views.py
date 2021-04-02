@@ -1,7 +1,7 @@
+from django.shortcuts import render
+
 from blog.models import Post
 from projects.models import Project
-
-from django.shortcuts import render
 
 from .models import Home
 

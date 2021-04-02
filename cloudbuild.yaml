@@ -16,7 +16,7 @@ steps:
     volumes:
       - name: static
         path: /workspace/static/build
-  - name: python:3.7-slim
+  - name: python:3.9-slim
     dir: django
     args:
       - pip
@@ -26,7 +26,7 @@ steps:
     volumes:
       - name: static
         path: /workspace/django/static
-  - name: python:3.7-slim
+  - name: python:3.9-slim
     dir: django
     args:
       - python

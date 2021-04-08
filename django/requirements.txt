@@ -1,4 +1,4 @@
-django==3.0.13
+django==3.0.14
 django-gcloud-connectors==0.3.2
 django-htmlmin==0.11.0
 google-cloud-logging==2.3.1

@@ -259,3 +259,25 @@ h3 {
     background-color: rgba(0, 0, 0, .05);
   }
 }
+
+.contact-form p {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.contact-form button,
+.contact-form input,
+.contact-form textarea {
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: .2rem;
+  color: #334;
+  font: inherit;
+  padding: .5rem;
+}
+
+.contact-form button,
+.contact-form input[type="submit"] {
+  box-shadow: 0 .1rem .2rem #0004;
+}

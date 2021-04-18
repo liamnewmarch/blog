@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'contact',
     'blog',
     'pages',
     'projects',
@@ -140,10 +141,19 @@ else:
 
 # Email
 
+ADMIN_NAME = os.environ.get('ADMIN_NAME')
+ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+if ADMIN_NAME and ADMIN_EMAIL:
+    ADMINS = [(ADMIN_NAME, ADMIN_EMAIL)]
+    DEFAULT_FROM_EMAIL = SERVER_EMAIL = f'{ADMIN_NAME} <{ADMIN_EMAIL}>'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_HOST_USER = 'apikey'
+    EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True

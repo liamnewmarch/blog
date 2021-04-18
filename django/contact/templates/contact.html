@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="contact-form">
+  <div class="container">
+    <h2> Get in contact </h2>
+    <form action="{% url 'contact' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</section>
+{% endblock %}

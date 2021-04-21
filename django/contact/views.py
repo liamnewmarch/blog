@@ -16,11 +16,11 @@ def contact(request):
             mail_admins(
                 'New contact form response',
                 render_to_string('emails/response.txt', {
-                    'response': form.instance,
+                    'response': form.cleaned_data,
                 }),
                 fail_silently=False,
                 html_message=render_to_string('emails/response.html', {
-                    'response': form.instance,
+                    'response': form.cleaned_data,
                 })
             )
             return HttpResponseRedirect(reverse('contact-thanks'))

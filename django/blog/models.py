@@ -4,6 +4,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils.functional import cached_property
+
 from markdown import markdown
 
 

@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render
 
 from blog.models import Post
 from projects.models import Project
-
 from .models import Home
 
 

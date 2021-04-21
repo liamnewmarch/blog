@@ -1,4 +1,5 @@
 import os
+import sys
 from distutils.util import strtobool
 from pathlib import Path
 
@@ -15,6 +16,8 @@ try:
     DEBUG = bool(strtobool(os.environ.get('DJANGO_DEBUG', '')))
 except ValueError:
     DEBUG = False
+
+TEST = 'test' in sys.argv
 
 if not DEBUG:
     setup_cloud_logging()
@@ -98,7 +101,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'liamnewmarch.context.globals',
+                'liamnewmarch.context_processors.globals',
             ],
         },
     },
@@ -107,13 +110,20 @@ TEMPLATES = [
 
 # Database
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'gcloudc.db.backends.datastore',
-        'INDEXES_FILE': str(BASE_DIR / 'djangaeidx.yaml'),
-        'PROJECT': 'liamnewmarch-blog',
-    },
-}
+if TEST:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+        },
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'gcloudc.db.backends.datastore',
+            'INDEXES_FILE': str(BASE_DIR / 'djangaeidx.yaml'),
+            'PROJECT': 'liamnewmarch-blog',
+        },
+    }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 

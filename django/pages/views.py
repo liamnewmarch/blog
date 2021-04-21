@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from blog.models import Post
 from projects.models import Project
@@ -7,7 +7,7 @@ from .models import Home
 
 
 def home_page(request):
-    page, _ = Home.objects.get_or_create()
+    page = get_object_or_404(Home)
     projects = Project.objects.all()
 
     if request.user.is_authenticated:

@@ -1,30 +1,36 @@
-CONTAINER := docker-compose
-DJANGO := $(CONTAINER) exec django python manage.py
-NPM :=  $(CONTAINER) exec npm
+datastore := docker compose exec datastore
+django := docker compose exec django
+static :=  docker compose exec static
+
+django-apps := contact blog pages projects
+django-fixtures := fixtures/placeholder.yaml
 
 .PHONY: default
-default:
-	$(MAKE) start
+default: start
 
 .env:
 	touch .env
 
 .PHONY: setup
 setup:
-	$(DJANGO) migrate
-	$(DJANGO) createsuperuser
-	$(DJANGO) loaddata fixtures/placeholder.yaml
+	$(django) python manage.py migrate
+	$(django) python manage.py createsuperuser
+	$(django) python manage.py loaddata $(django-fixtures)
 
 .PHONY: start
-start:
-	$(MAKE) .env
-	$(CONTAINER) up
+start: .env
+	docker compose up
 
 .PHONY: stop
 stop:
-	$(CONTAINER) stop
+	docker compose stop
 
 .PHONY: test
 test:
-	$(DJANGO) test
-	$(NPM) test
+	$(django) flake8
+	$(django) python -Wa manage.py test
+	$(static) npm test
+
+.PHONY: update-fixtures
+update-fixtures:
+	$(django) python manage.py dumpdata $(django-apps) --format=yaml --output=$(django-fixtures)

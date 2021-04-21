@@ -8,8 +8,8 @@
     <title>{% if title %}{{ title }} |{% endif %} Liam Newmarch</title>
     <link href="{% static 'index.css' %}" rel="stylesheet">
     <link href="{{ google_fonts_url }}" rel="stylesheet">
-    {# <link href="/img/icon-512.png" rel="icon" sizes="512x512" type="image/png"> #}
-    {# <link href="/humans.txt" rel="author"> #}
+    <link href="{% static 'favicon.png' %}" rel="icon" sizes="512x512" type="image/png">
+    <link href="{% static 'humans.txt' %}" rel="author">
     <script defer src="{% static 'index.js' %}"></script>
     {% block head %}{% endblock head %}
   </head>

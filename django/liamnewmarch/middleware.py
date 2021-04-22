@@ -2,9 +2,9 @@ from django.http import HttpResponseRedirect
 
 
 class CanonicalHostRedirectMiddleware:
-    """Redirect selected block-listed hosts to the canonical host."""
+    """Redirect selected block-listed hosts to the canonical URL."""
 
-    CANONICAL_HOST = 'liam.nwmr.ch'
+    CANONICAL_BASE_URL = 'https://liam.nwmr.ch'
 
     REDIRECT_HOSTS = (
         'nwmr.ch',
@@ -18,6 +18,6 @@ class CanonicalHostRedirectMiddleware:
         host = request.META['HTTP_HOST']
 
         if host in self.REDIRECT_HOSTS:
-            return HttpResponseRedirect(self.CANONICAL_HOST + request.path)
+            return HttpResponseRedirect(self.CANONICAL_BASE_URL + request.path)
 
         return self.get_response(request)

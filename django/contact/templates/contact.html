@@ -7,7 +7,7 @@
     <form action="{% url 'contact' %}" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" value="Submit">
+      <button class="button-link button-link-primary">Submit</button>
     </form>
   </div>
 </section>

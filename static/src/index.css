@@ -86,7 +86,7 @@ h3 {
   background-color: var(--theme-light);
   border: 1px solid var(--theme-border);
   border-radius: .2rem;
-  box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
+  box-shadow: .1rem .1rem .1rem var(--tint-darker);
   color: var(--theme-dark);
   font-weight: 500;
   padding: .5rem 1rem;
@@ -98,8 +98,8 @@ h3 {
 
 .button-link:hover {
   box-shadow:
-    .1rem .1rem .1rem rgba(0, 0, 0, .1),
-    .2rem .5rem .5rem rgba(0, 0, 0, .1);
+    .1rem .1rem .1rem var(--tint-darker),
+    .2rem .5rem .5rem var(--tint-darker);
   border-color: var(--theme-text);
   transform: translateY(-.1rem);
 }
@@ -274,8 +274,8 @@ h3 {
   max-width: 100%;
 }
 
-.article-content .codehilite code {
-  background-color: var(--color-dark);
+.article-content .codehilite {
+  background-color: var(--tint-darker);
   border-left: .2rem solid;
   border-radius: .2rem;
   display: block;
@@ -286,15 +286,14 @@ h3 {
   tab-size: 4;
 }
 
-.article-content :not(.codehilite) > code {
-  background-color: rgba(0, 0, 0, .1);
-  border-radius: .2rem;
-  padding: .2rem .5rem;
-  white-space: normal;
+.article-content .codehilite pre {
+  margin: 0;
 }
 
-[data-theme="light"] .article-content :not(.codehilite) > code {
-  background-color: rgba(0, 0, 0, .05);
+.article-content p code {
+  background-color: var(--tint-darker);
+  border-radius: .2rem;
+  padding: .2rem .5rem;
 }
 
 .contact-form p {

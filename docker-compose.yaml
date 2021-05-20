@@ -16,11 +16,13 @@ services:
     init: true
     ports:
       - 8081:8081
+    tty: true
     volumes:
       - datastore:/opt/data
 
   django:
     build: ./django
+    command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - datastore
     env_file: .env
@@ -30,6 +32,8 @@ services:
       - DATASTORE_HOST=datastore:8081
       - DJANGO_DEBUG=True
       - DJANGO_ALLOWED_HOSTS=django,localhost
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
     ports:
       - 8000:8000
     tty: true
@@ -39,11 +43,13 @@ services:
 
   static:
     build: ./static
+    command: npm start
     environment:
       - NODE_ENV=development
     ports:
       - 3000:3000
       - 3001:3001
+    tty: true
     volumes:
       - ./static:/usr/src/app:cached
       - static:/usr/src/app/build

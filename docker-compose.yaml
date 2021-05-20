@@ -53,9 +53,7 @@ services:
     volumes:
       - ./static:/usr/src/app:cached
       - static:/usr/src/app/build
-      - node_modules:/usr/src/app/node_modules
 
 volumes:
   datastore:
-  node_modules:
   static:

@@ -1,4 +1,4 @@
 cron:
-  - description: keep instance alive
+  - description: healthcheck
     schedule: every 15 minutes
-    url: /
+    url: /healthcheck/

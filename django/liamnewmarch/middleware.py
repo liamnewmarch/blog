@@ -15,9 +15,7 @@ class CanonicalHostRedirectMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        host = request.META['HTTP_HOST']
-
-        if host in self.REDIRECT_HOSTS:
+        if request.get_host() in self.REDIRECT_HOSTS:
             return HttpResponseRedirect(self.CANONICAL_BASE_URL + request.path)
 
         return self.get_response(request)

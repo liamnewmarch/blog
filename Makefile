@@ -19,7 +19,7 @@ setup:
 
 .PHONY: start
 start: .env
-	docker compose up
+	docker compose up --detach
 
 .PHONY: stop
 stop:

@@ -2,8 +2,9 @@ from django.contrib import admin, auth
 from django.urls import include, path
 
 # Disable admin models which aren’t supported on the datastore.
-admin.site.unregister(auth.models.User)
-admin.site.unregister(auth.models.Group)
+for model in (auth.models.Group, auth.models.User):
+    if admin.site.is_registered(model):
+        admin.site.unregister(model)
 
 urlpatterns = (
     path('', include('pages.urls')),

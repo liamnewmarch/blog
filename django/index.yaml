@@ -1,36 +1,114 @@
 indexes:
+  - kind: auth_permission
+    properties:
+      - name: content_type_id
+      - name: codename
+
+  - kind: blog_post
+    properties:
+      - name: __key__
+        direction: desc
+      - name: published
+        direction: desc
+      - name: visibility
+  - kind: blog_post
+    properties:
+      - name: published
+        direction: desc
+      - name: visibility
+  - kind: blog_post
+    properties:
+      - name: published
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: blog_post
+    properties:
+      - name: visibility
+      - name: published
+        direction: desc
+  - kind: blog_post
+    ancestor: yes
+    properties:
+      - name: __key__
+      - name: published
+  - kind: blog_post
+    properties:
+      - name: visibility
+      - name: published
+        direction: desc
+
+  - kind: contact_response
+    properties:
+      - name: datetime
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: name
+      - name: datetime
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: name
+        direction: desc
+      - name: datetime
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: email
+      - name: name
+        direction: desc
+      - name: datetime
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: email
+        direction: desc
+      - name: name
+        direction: desc
+      - name: datetime
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: datetime
+      - name: email
+        direction: desc
+      - name: name
+        direction: desc
+      - name: __key__
+        direction: desc
+  - kind: contact_response
+    properties:
+      - name: datetime
+        direction: desc
+      - name: email
+        direction: desc
+      - name: name
+        direction: desc
+      - name: __key__
+        direction: desc
+
   - kind: django_admin_log
     properties:
       - name: user_id
       - name: action_time
         direction: desc
-  - kind: blog_post
-    properties:
-      - name: __key__
-        direction: desc
-      - name: published
-        direction: desc
-      - name: visibility
-  - kind: blog_post
-    properties:
-      - name: published
-        direction: desc
-      - name: visibility
-  - kind: blog_post
-    properties:
-      - name: published
-        direction: desc
-      - name: __key__
-        direction: desc
-  - kind: blog_post
-    properties:
-      - name: visibility
-      - name: published
-        direction: desc
+
   - kind: pages_home
     properties:
       - name: __key__
         direction: desc
+
   - kind: projects_project
     properties:
       - name: __key__

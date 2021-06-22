@@ -20,7 +20,7 @@ def contact(request):
                 }),
                 fail_silently=False,
                 html_message=render_to_string('emails/response.html', {
-                    'response': form.cleaned_data,
+                    'response': form.instance,
                 })
             )
             return HttpResponseRedirect(reverse('contact-thanks'))

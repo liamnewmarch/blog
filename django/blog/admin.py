@@ -1,10 +1,9 @@
 from django.contrib import admin
 
-from .models import Post
+from . import models
 
 
+@admin.register(models.Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'visibility', 'published')
-
-
-admin.site.register(Post, PostAdmin)
+    sortable_by = ()

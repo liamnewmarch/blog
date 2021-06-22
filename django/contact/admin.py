@@ -1,10 +1,9 @@
 from django.contrib import admin
 
-from .models import Response
+from . import models
 
 
+@admin.register(models.Response)
 class ResponseAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'datetime')
-
-
-admin.site.register(Response, ResponseAdmin)
+    sortable_by = ()

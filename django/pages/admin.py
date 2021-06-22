@@ -12,8 +12,7 @@ class LimitInstancesModelAdmin(admin.ModelAdmin):
         return super().has_add_permission(*args, **kwargs)
 
 
+@admin.register(Home)
 class HomeAdmin(LimitInstancesModelAdmin):
     limit_instances = 1
-
-
-admin.site.register(Home, HomeAdmin)
+    sortable_by = ()

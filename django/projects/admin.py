@@ -1,5 +1,8 @@
 from django.contrib import admin
 
-from .models import Project
+from . import models
 
-admin.site.register(Project)
+
+@admin.register(models.Project)
+class ProjectAdmin(admin.ModelAdmin):
+    sortable_by = ()

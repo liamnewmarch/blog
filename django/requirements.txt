@@ -1,4 +1,6 @@
 django==3.2.4
+django-csp==3.7
+django-csp-reports==1.4
 django-gcloud-connectors==0.3.2
 django-htmlmin==0.11.0
 google-cloud-logging==2.3.1

@@ -4,6 +4,7 @@ from distutils.util import strtobool
 from pathlib import Path
 
 from django.core.management.utils import get_random_secret_key
+from django.urls import reverse_lazy
 
 from .google_cloud import apply_datastore_env_vars, setup_cloud_logging
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'cspreports',
     'blog',
     'contact',
     'healthcheck',
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
 ]
@@ -80,15 +83,21 @@ AUTH_PASSWORD_VALIDATORS = [
     )
 ]
 
+CSRF_COOKIE_SAMESITE = 'Strict'
+SESSION_COOKIE_SAMESITE = 'Strict'
+
 if not DEBUG:
     CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 10
+    SESSION_COOKIE_SECURE = True
+
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    SECURE_HSTS_SECONDS = 10
+
     SECURE_REDIRECT_EXEMPT = [r'^healthcheck/$']
     SECURE_REFERRER_POLICY = 'same-origin'
+
     SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
 
 
 # Templates
@@ -171,3 +180,22 @@ else:
     EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
+
+
+# CSP
+
+CSP_BLOCK_ALL_MIXED_CONTENT = True
+CSP_DEFAULT_SRC = ()
+CSP_FONT_SRC = ("'self'", 'fonts.gstatic.com',)
+CSP_IMG_SRC = ("'self'", 'https:',)
+CSP_SCRIPT_SRC_ELEM = ("'self'",)
+CSP_STYLE_SRC_ELEM = ("'self'", 'fonts.googleapis.com',)
+
+if DEBUG:
+    # Browsersync
+    CSP_CONNECT_SRC = ("'self'",)
+    CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'",)
+else:
+    # Enable nonces for script elements
+    CSP_INCLUDE_NONCE_IN = ('script-src-elem',)
+    CSP_REPORT_URI = reverse_lazy('report_csp')

@@ -11,7 +11,7 @@
     <noscript><link href="{{ google_fonts_url }}" rel="stylesheet"></noscript>
     <link href="{% static 'favicon.png' %}" rel="icon" sizes="512x512" type="image/png">
     <link href="{% static 'humans.txt' %}" rel="author">
-    <script defer src="{% static 'index.js' %}"></script>
+    <script defer nonce="{{ request.csp_nonce }}" src="{% static 'index.js' %}"></script>
     {% block head %}{% endblock head %}
   </head>
   <body>

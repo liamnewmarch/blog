@@ -10,7 +10,7 @@ services:
       - 8081:8081
     tty: true
     volumes:
-      - datastore:/opt/datastore
+      - ./datastore:/opt/datastore
 
   django:
     build: ./django
@@ -31,7 +31,7 @@ services:
     tty: true
     volumes:
       - ./django:/usr/src/app:cached
-      - static:/usr/src/app/static
+      - ./static/build:/usr/src/app/static:cached
 
   static:
     build: ./static
@@ -44,8 +44,3 @@ services:
     tty: true
     volumes:
       - ./static:/usr/src/app:cached
-      - static:/usr/src/app/build
-
-volumes:
-  datastore:
-  static:

@@ -7,22 +7,24 @@ from django.urls import reverse
 from .forms import ContactForm
 
 
+def _send_email(context: dict):
+    mail_admins(
+        'New contact form response',
+        render_to_string('emails/response.txt', context),
+        fail_silently=False,
+        html_message=render_to_string('emails/response.html', context)
+    )
+
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
         if form.is_valid():
             form.save()
-            mail_admins(
-                'New contact form response',
-                render_to_string('emails/response.txt', {
-                    'response': form.cleaned_data,
-                }),
-                fail_silently=False,
-                html_message=render_to_string('emails/response.html', {
-                    'response': form.instance,
-                })
-            )
+            _send_email(context={
+                'response': form.instance,
+            })
             return HttpResponseRedirect(reverse('contact-thanks'))
     else:
         form = ContactForm()

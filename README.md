@@ -20,17 +20,17 @@ You can interact with Django, npm, etc via Docker Compose:
 
 ```sh
 # Django
-docker-compose exec django python manage.py help
+docker compose exec django python manage.py help
 
 # npm
-docker-compose exec static npm run
+docker compose exec static npm run
 ```
 
 In order to prevent Django from generating a new secret key each time the project is run, you can generate your own and add it to the `.env` file as `DJANGO_SECRET_KEY=<your secret key>`.
 
 ## Deploying to Google Cloud
 
-A new version is deployed by Cloud Build when commits are pushed to the `main` branch in this repo. Manual builds can be triggered by running this in the root of the repo:
+A new version is deployed by Cloud Build when commits are pushed to the `main` branch in this repo. Manual builds can be triggered by installing [gcloud](https://cloud.google.com/sdk/gcloud) and running this in the root of the repo:
 
 ```sh
 gcloud builds submit .

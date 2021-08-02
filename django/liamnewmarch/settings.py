@@ -195,6 +195,8 @@ CSP_REPORTS_EMAIL_ADMINS = False
 CSP_REPORTS_LOG_LEVEL = 'error'
 CSP_REPORTS_SAVE = False
 
+STACKDRIVER_API_KEY = os.environ.get('STACKDRIVER_API_KEY')
+
 if DEBUG:
     # Browsersync
     CSP_CONNECT_SRC = ("'self'",)

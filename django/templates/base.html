@@ -14,7 +14,11 @@
     <script defer nonce="{{ request.csp_nonce }}" src="{% static 'index.js' %}"></script>
     {% block head %}{% endblock head %}
   </head>
-  <body>
+  <body
+    {% if debug %}data-debug{% endif %}
+    data-google-cloud-project="{{ google_cloud_project }}"
+    data-stackdriver-api-key="{{ stackdriver_api_key }}"
+  >
     <header hidden>
       <a href="{% url 'home-page' %}">
         <h1>Liam Newmarch</h1>

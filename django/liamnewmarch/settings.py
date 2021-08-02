@@ -191,6 +191,10 @@ CSP_IMG_SRC = ("'self'", 'https:',)
 CSP_SCRIPT_SRC_ELEM = ("'self'",)
 CSP_STYLE_SRC_ELEM = ("'self'", 'fonts.googleapis.com',)
 
+CSP_REPORTS_EMAIL_ADMINS = False
+CSP_REPORTS_LOG_LEVEL = 'error'
+CSP_REPORTS_SAVE = False
+
 if DEBUG:
     # Browsersync
     CSP_CONNECT_SRC = ("'self'",)

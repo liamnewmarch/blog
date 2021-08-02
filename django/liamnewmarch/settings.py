@@ -188,8 +188,8 @@ CSP_BLOCK_ALL_MIXED_CONTENT = True
 CSP_DEFAULT_SRC = ()
 CSP_FONT_SRC = ("'self'", 'fonts.gstatic.com',)
 CSP_IMG_SRC = ("'self'", 'https:',)
-CSP_SCRIPT_SRC_ELEM = ("'self'",)
-CSP_STYLE_SRC_ELEM = ("'self'", 'fonts.googleapis.com',)
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com',)
 
 CSP_REPORTS_EMAIL_ADMINS = False
 CSP_REPORTS_LOG_LEVEL = 'error'
@@ -198,7 +198,7 @@ CSP_REPORTS_SAVE = False
 if DEBUG:
     # Browsersync
     CSP_CONNECT_SRC = ("'self'",)
-    CSP_SCRIPT_SRC_ELEM = ("'self'", "'unsafe-inline'",)
+    CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'",)
 else:
     # Enable nonces for script elements
     CSP_INCLUDE_NONCE_IN = ('script-src-elem',)

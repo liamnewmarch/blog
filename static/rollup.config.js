@@ -1,3 +1,5 @@
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import browsersync from 'rollup-plugin-browsersync';
 import css from 'rollup-plugin-css-only';
 import copy from 'rollup-plugin-copy';
@@ -13,6 +15,8 @@ export default {
     format: 'es',
   },
   plugins: [
+    resolve(),
+    commonjs(),
     isWatch && browsersync({
       open: false,
       proxy: 'django:8000',
@@ -33,4 +37,7 @@ export default {
     }),
     isProduction && terser(),
   ],
+  watch: {
+    clearScreen: false,
+  },
 };

@@ -23,6 +23,12 @@ indexes:
     direction: desc
   - name: "__key__"
     direction: desc
+- kind: "cspreports_cspreport"
+  properties:
+  - name: "created"
+    direction: desc
+  - name: "__key__"
+    direction: desc
 - kind: "django_admin_log"
   properties:
   - name: "user_id"

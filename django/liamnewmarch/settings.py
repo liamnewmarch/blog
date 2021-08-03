@@ -186,6 +186,7 @@ else:
 
 CSP_BLOCK_ALL_MIXED_CONTENT = True
 CSP_DEFAULT_SRC = ()
+CSP_CONNECT_SRC = ("'self'", 'clouderrorreporting.googleapis.com')
 CSP_FONT_SRC = ("'self'", 'fonts.gstatic.com',)
 CSP_IMG_SRC = ("'self'", 'https:',)
 CSP_SCRIPT_SRC = ("'self'",)
@@ -199,8 +200,7 @@ STACKDRIVER_API_KEY = os.environ.get('STACKDRIVER_API_KEY')
 
 if DEBUG:
     # Browsersync
-    CSP_CONNECT_SRC = ("'self'",)
-    CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'",)
+    CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'",)  # type: ignore
 else:
     # Enable nonces for script elements
     CSP_INCLUDE_NONCE_IN = ('script-src',)

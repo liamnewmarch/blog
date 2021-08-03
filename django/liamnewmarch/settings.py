@@ -203,5 +203,5 @@ if DEBUG:
     CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'",)
 else:
     # Enable nonces for script elements
-    CSP_INCLUDE_NONCE_IN = ('script-src-elem',)
+    CSP_INCLUDE_NONCE_IN = ('script-src',)
     CSP_REPORT_URI = reverse_lazy('report_csp')

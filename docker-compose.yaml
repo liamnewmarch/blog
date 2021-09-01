@@ -2,7 +2,15 @@ version: '3.8'
 
 services:
   datastore:
-    command: gcloud beta emulators datastore start --data-dir=/opt/datastore --host-port=datastore:8081
+    command:
+      - gcloud
+      - --project=liamnewmarch-blog
+      - beta
+      - emulators
+      - datastore
+      - start
+      - --data-dir=/opt/datastore
+      - --host-port=datastore:8081
     env_file: .env
     image: google/cloud-sdk:emulators
     init: true
@@ -14,7 +22,11 @@ services:
 
   django:
     build: ./django
-    command: python manage.py runserver 0.0.0.0:8000
+    command:
+      - python
+      - manage.py
+      - runserver
+      - 0.0.0.0:8000
     depends_on:
       - datastore
     env_file: .env
@@ -35,7 +47,9 @@ services:
 
   static:
     build: ./static
-    command: npm start
+    command:
+      - npm
+      - start
     environment:
       - NODE_ENV=development
     ports:

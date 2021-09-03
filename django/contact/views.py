@@ -1,3 +1,5 @@
+import time
+
 from django.core.mail import mail_admins
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -5,6 +7,10 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 
 from .forms import ContactForm
+
+
+def _valid_submit_time(request, seconds):
+    return int(time.time()) - int(request.POST['datetime']) > seconds
 
 
 def _send_email(context: dict):
@@ -19,8 +25,12 @@ def _send_email(context: dict):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        seconds = 5
 
-        if form.is_valid():
+        if not _valid_submit_time(request, seconds):
+            form.add_error(None, f'That was a bit fast! Please wait {seconds} seconds before submitting.')
+
+        elif form.is_valid():
             form.save()
             _send_email(context={
                 'response': form.instance,

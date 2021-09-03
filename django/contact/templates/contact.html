@@ -6,6 +6,7 @@
     <h2> Get in contact </h2>
     <form action="{% url 'contact' %}" method="post">
       {% csrf_token %}
+      <input type="hidden" name="datetime" value="{% now "U" %}">
       {{ form.as_p }}
       <button class="button-link button-link-primary">Submit</button>
     </form>

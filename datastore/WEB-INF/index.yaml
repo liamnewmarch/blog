@@ -37,6 +37,11 @@ indexes:
     direction: desc
   - name: "__key__"
     direction: desc
+- kind: "contact_response"
+  ancestor: yes
+  properties:
+  - name: "__key__"
+  - name: "datetime"
 - kind: "cspreports_cspreport"
   properties:
   - name: "created"

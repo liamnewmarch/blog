@@ -1,6 +1,7 @@
-FROM node:14-alpine
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 COPY package*.json .
 
-RUN npm clean-install
+RUN npm --global install --no-audit --no-fund npm && \
+    npm --no-audit --no-fund clean-install

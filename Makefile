@@ -27,8 +27,8 @@ stop:
 
 .PHONY: test
 test:
-	$(django) flake8
-	$(django) python -Wa manage.py test
+	$(django) flake8 src
+	$(django) python -Wa src/manage.py test
 	$(static) npm test
 
 .PHONY: update-fixtures

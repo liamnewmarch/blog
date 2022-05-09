@@ -1,18 +1,10 @@
 import { ThemeController } from './controller.js';
 
-/** @type {NodeListOf<HTMLLinkElement>} */
-const preloadLinks = document.querySelectorAll('link[rel="preload"]');
-
 /** @type {ThemeController} */
 const theme = new ThemeController();
 
 /** @type {NodeListOf<HTMLElement>} */
 const toggles = document.querySelectorAll('.toggle-theme');
-
-// Activate preload link elements
-for (const element of preloadLinks) {
-  element.rel = 'stylesheet';
-}
 
 // Toggle the theme when a button is clicked
 for (const element of toggles) {

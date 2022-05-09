@@ -151,15 +151,14 @@ USE_TZ = True
 
 
 # Static files
-
-STATIC_URL = '/static/'
-
 if DEBUG:
+    STATIC_URL = 'http://localhost:3000/'
     STATICFILES_DIRS = [
         BASE_DIR / 'static',
     ]
 else:
     STATIC_ROOT = BASE_DIR / 'static'
+    STATIC_URL = '/static/'
 
 
 # Email
@@ -199,8 +198,10 @@ CSP_REPORTS_SAVE = False
 STACKDRIVER_API_KEY = os.environ.get('STACKDRIVER_API_KEY')
 
 if DEBUG:
-    # Browsersync
-    CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'",)  # type: ignore
+    # Static server
+    CSP_IMG_SRC += ('localhost:3000',)
+    CSP_SCRIPT_SRC += ('localhost:3000',)
+    CSP_STYLE_SRC += ('localhost:3000',)
 else:
     # Enable nonces for script elements
     CSP_INCLUDE_NONCE_IN = ('script-src',)

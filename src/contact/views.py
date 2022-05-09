@@ -28,7 +28,10 @@ def contact(request):
         seconds = 5
 
         if not _valid_submit_time(request, seconds):
-            form.add_error(None, f'That was a bit fast! Please wait {seconds} seconds before submitting.')
+            form.add_error(None, (
+                f'That was a bit fast! Please wait {seconds} seconds before '
+                'submitting.'
+            ))
 
         elif form.is_valid():
             form.save()

@@ -5,37 +5,15 @@ steps:
   - name: node:18-alpine
     args:
       - npm
-      - clean-install
+      - install
       - --no-audit
       - --no-fund
       - --no-progress
-      - --production
   - name: node:18-alpine
     args:
       - npm
       - run
       - build
-    volumes:
-      - name: static
-        path: /workspace/src/static
-  - name: python:3.9-slim
-    args:
-      - pip
-      - install
-      - --requirement=requirements.txt
-      - --user
-    volumes:
-      - name: static
-        path: /workspace/src/static
-  - name: python:3.9-slim
-    args:
-      - python
-      - manage.py
-      - collectstatic
-      - --no-input
-    volumes:
-      - name: static
-        path: /workspace/src/static
   - name: google/cloud-sdk:alpine
     dir: src
     args:
@@ -48,6 +26,3 @@ steps:
       - --version=live
       - --no-promote
       - --quiet
-    volumes:
-      - name: static
-        path: /workspace/src/static

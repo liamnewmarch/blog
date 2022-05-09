@@ -1,14 +1,18 @@
 # liam.nwmr.ch
 
+This is the source code for my blog. It’s a [Django](https://www.djangoproject.com) project that runs on [Google App Engine](https://cloud.google.com/appengine/) using [Djangae](https://gitlab.com/potato-oss/djangae/djangae).
+
 ## Local development
 
-This project uses Docker Compose to run the front-end, back-end and database as separate services. The easiest way to get started is to install Docker Desktop and run:
+To run this project locally you’ll need Docker installed. It’s possible to run the project without Docker if you know what you’re doing. The easiest way to get up and running is to install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+The project uses Docker Compose to run three separate containers, one for the Google Cloud Datastore emulator, one for the Django back-end, and one for the front-end server. You can run all three with:
 
 ```sh
 make
 ```
 
-This should create an `.env` file, and build and start three containers: `datastore`, `django` and `static`. With that running, in a new shell run:
+This should create an empty `.env` file, and then build and start three containers: `datastore`, `django` and `static`. With that running, in a new shell run:
 
 ```sh
 make setup

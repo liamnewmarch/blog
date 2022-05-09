@@ -9,9 +9,9 @@ const isWatch = Boolean(process.env.ROLLUP_WATCH);
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/static/index.js',
   output: {
-    dir: 'build',
+    file: 'src/static/bundle.js',
     format: 'es',
   },
   plugins: [
@@ -22,7 +22,7 @@ export default {
       proxy: 'django:8000',
     }),
     css({
-      output: 'index.css',
+      output: 'bundle.css',
     }),
     copy({
       copyOnce: true,

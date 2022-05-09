@@ -21,10 +21,12 @@ services:
       - ./datastore:/opt/datastore
 
   django:
-    build: ./django
+    build:
+      context: .
+      dockerfile: ./docker/django/Dockerfile
     command:
       - python
-      - manage.py
+      - src/manage.py
       - runserver
       - 0.0.0.0:8000
     depends_on:
@@ -42,11 +44,12 @@ services:
       - 8000:8000
     tty: true
     volumes:
-      - ./django:/usr/src/app:cached
-      - ./static/build:/usr/src/app/static:cached
+      - ./:/usr/src/app:cached
 
   static:
-    build: ./static
+    build:
+      context: .
+      dockerfile: ./docker/static/Dockerfile
     command:
       - npm
       - start
@@ -57,4 +60,4 @@ services:
       - 3001:3001
     tty: true
     volumes:
-      - ./static:/usr/src/app:cached
+      - ./:/usr/src/app:cached

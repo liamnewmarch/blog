@@ -13,9 +13,9 @@ default: start
 
 .PHONY: setup
 setup:
-	$(django) python manage.py migrate
-	$(django) python manage.py createsuperuser
-	$(django) python manage.py loaddata $(django-fixtures)
+	$(django) python src/manage.py migrate
+	$(django) python src/manage.py createsuperuser
+	$(django) python src/manage.py loaddata $(django-fixtures)
 
 .PHONY: start
 start: .env
@@ -33,4 +33,4 @@ test:
 
 .PHONY: update-fixtures
 update-fixtures:
-	$(django) python manage.py dumpdata $(django-apps) --format=yaml --output=$(django-fixtures)
+	$(django) python src/manage.py dumpdata $(django-apps) --format=yaml --output=$(django-fixtures)

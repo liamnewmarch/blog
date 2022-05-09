@@ -2,6 +2,7 @@
 .mypy_cache
 __pycache__
 datastore/WEB-INF/appengine-generated
-static/build
-static/node_modules
+src/static/bundle.css
+src/static/bundle.js
+node_modules
 venv

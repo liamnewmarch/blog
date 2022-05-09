@@ -6,12 +6,12 @@
     <meta name="viewport" content="initial-scale=1">
     <meta name="description" content="Software engineer for the web working at Potato London.">
     <title>{% if title %}{{ title }} |{% endif %} Liam Newmarch</title>
-    <link href="{% static 'index.css' %}" rel="stylesheet">
+    <link href="{% static 'bundle.css' %}" rel="stylesheet">
     <link href="{{ google_fonts_url }}" rel="preload" as="style">
     <noscript><link href="{{ google_fonts_url }}" rel="stylesheet"></noscript>
     <link href="{% static 'favicon.png' %}" rel="icon" sizes="512x512" type="image/png">
     <link href="{% static 'humans.txt' %}" rel="author">
-    <script defer nonce="{{ request.csp_nonce }}" src="{% static 'index.js' %}"></script>
+    <script defer nonce="{{ request.csp_nonce }}" src="{% static 'bundle.js' %}"></script>
     {% block head %}{% endblock head %}
   </head>
   <body

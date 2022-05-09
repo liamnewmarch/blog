@@ -2,22 +2,23 @@ options:
   env:
     - NODE_ENV=production
 steps:
-  - name: node:14-alpine
-    dir: static
+  - name: node:18-alpine
     args:
       - npm
       - clean-install
-  - name: node:14-alpine
-    dir: static
+      - --no-audit
+      - --no-fund
+      - --no-progress
+      - --production
+  - name: node:18-alpine
     args:
       - npm
       - run
       - build
     volumes:
       - name: static
-        path: /workspace/static/build
+        path: /workspace/src/static
   - name: python:3.9-slim
-    dir: django
     args:
       - pip
       - install
@@ -25,9 +26,8 @@ steps:
       - --user
     volumes:
       - name: static
-        path: /workspace/django/static
+        path: /workspace/src/static
   - name: python:3.9-slim
-    dir: django
     args:
       - python
       - manage.py
@@ -35,9 +35,9 @@ steps:
       - --no-input
     volumes:
       - name: static
-        path: /workspace/django/static
+        path: /workspace/src/static
   - name: google/cloud-sdk:alpine
-    dir: django
+    dir: src
     args:
       - gcloud
       - app
@@ -50,4 +50,4 @@ steps:
       - --quiet
     volumes:
       - name: static
-        path: /workspace/django/static
+        path: /workspace/src/static

@@ -10,5 +10,5 @@ trim_trailing_whitespace = true
 [{Dockerfile,*.py}]
 indent_size = 4
 
-[makefile]
+[Makefile]
 indent_style = tab

@@ -44,6 +44,7 @@
 
 html {
   box-sizing: border-box;
+  color-scheme: dark light;
   font: 300 100% / 1.5 system-ui, sans-serif;
   font-feature-settings: 'liga';
   min-height: 20rem;

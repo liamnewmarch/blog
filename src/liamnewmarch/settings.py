@@ -2,6 +2,7 @@ import os
 import sys
 from distutils.util import strtobool
 from pathlib import Path
+from urllib.parse import urlencode
 
 from django.core.management.utils import get_random_secret_key
 from django.urls import reverse_lazy
@@ -194,6 +195,13 @@ CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com',)
 CSP_REPORTS_EMAIL_ADMINS = False
 CSP_REPORTS_LOG_LEVEL = 'error'
 CSP_REPORTS_SAVE = False
+
+GOOGLE_FONTS_BASE_URL = 'https://fonts.googleapis.com/css'
+
+GOOGLE_FONTS_URL = GOOGLE_FONTS_BASE_URL + '?' + urlencode({
+    'display': 'block',
+    'family': 'Material Icons Round',
+})
 
 STACKDRIVER_API_KEY = os.environ.get('STACKDRIVER_API_KEY')
 

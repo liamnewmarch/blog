@@ -2,11 +2,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "base": "esbuild ./src/static --bundle --entry-names=bundle",
+    "clean": "rm -rf src/static/dist src/static/meta.json",
+    "prebase": "npm run clean",
+    "base": "esbuild ./src/static --bundle --outdir=src/static/dist",
     "analyse": "npm run build -- --analyze=verbose",
-    "build": "npm run base -- --minify --outdir=src/static",
-    "start": "npm run base -- --serve=3000 --servedir=src/static --sourcemap",
-    "test": "eslint src/static --ignore-pattern=src/static/bundle.js"
+    "build": "npm run base -- --entry-names=[hash] --metafile=src/static/meta.json --minify",
+    "start": "npm run base -- --entry-names=bundle --serve=3000 --servedir=src/static --sourcemap",
+    "test": "eslint src/static"
   },
   "dependencies": {
     "esbuild": "^0.14.38",

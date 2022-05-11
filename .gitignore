@@ -3,6 +3,5 @@ __pycache__
 .mypy_cache
 datastore/WEB-INF/appengine-generated
 node_modules
-src/static/bundle.css
-src/static/bundle.js
+src/static/dist
 venv

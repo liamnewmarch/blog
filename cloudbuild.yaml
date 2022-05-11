@@ -23,6 +23,5 @@ steps:
       - app.yaml
       - cron.yaml
       - index.yaml
-      - --version=live
-      - --no-promote
+      - --promote
       - --quiet

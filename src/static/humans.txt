@@ -1,3 +1,14 @@
-Hello, world!
+Hello, world! 👋
 
-You can find me on Twitter and most other places as @liamnewmarch
+Thanks for checking out my humans.txt.
+
+I like coding things! If you’re interested in this site and how it’s made, you
+can find the source for it on GitHub:
+
+    https://github.com/liamnewmarch/liam.nwmr.ch
+
+I also love talking with like-minded tech folk. Lets be friends! You can find
+me on most social media as liamnewmarch, and as @liamnewmarch@mastodon.social
+on Mastodon.
+
+Have a good one 🌱

@@ -19,12 +19,16 @@
               <h3 class="card-title">{{ project.title }}</h3>
               <p>{{ project.summary }}</p>
               <div class="card-links">
-                <a class="button-link icon-after" data-icon="code" href="{{ project.source_url }}">
-                  GitHub
-                </a>
-                <a class="button-link button-link-primary" href="{{ project.project_url }}">
-                  View project
-                </a>
+                {% if project.source_url %}
+                  <a class="button-link" href="{{ project.source_url }}">
+                    Source code
+                  </a>
+                {% endif %}
+                {% if project.project_url %}
+                  <a class="button-link button-link-primary" href="{{ project.project_url }}">
+                    Live project
+                  </a>
+                {% end %}
               </div>
             </div>
           </li>
@@ -49,7 +53,7 @@
               <p>{{ blog_post.summary }}</p>
               <div class="card-links">
                 <a class="button-link button-link-primary" href="{% url 'blog-post-detail' slug=blog_post.slug %}">
-                  View article
+                  Read more
                 </a>
               </div>
             </div>
@@ -65,13 +69,19 @@
       <h2>Around the web</h2>
       <ul class="links-list">
         <li class="links-list-item">
-          <a class="link" href="https://codepen.io/liamnewmarch">CodePen</a>
+          <a class="link" href="https://codepen.io/liamnewmarch" rel="me">CodePen</a>
         </li>
         <li class="links-list-item">
-          <a class="link" href="https://github.com/liamnewmarch">GitHub</a>
+          <a class="link" href="https://github.com/liamnewmarch" rel="me">GitHub</a>
         </li>
         <li class="links-list-item">
-          <a class="link" href="https://twitter.com/liamnewmarch">Twitter</a>
+          <a class="link" href="https://mastodon.social/@liamnewmarch" rel="me">Mastodon</a>
+        </li>
+        <li class="links-list-item">
+          <a class="link" href="https://pixelfed.social/@liamnewmarch" rel="me">Pixelfed</a>
+        </li>
+        <li class="links-list-item">
+          <a class="link" href="https://stackoverflow.com/users/163142/liam-newmarch" rel="me">StackOverflow</a>
         </li>
         <li class="links-list-item">
           <a class="link" href="{% url 'contact' %}">Contact</a>

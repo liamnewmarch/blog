@@ -1,4 +1,0 @@
-cron:
-  - description: healthcheck
-    schedule: every 15 minutes
-    url: /healthcheck/

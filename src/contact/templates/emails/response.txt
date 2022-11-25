@@ -1,4 +1,0 @@
-Date: {{ response.datetime }}
-Name: {{ response.name }}
-Email: {{ response.email }}
-Message: {{ response.message }}

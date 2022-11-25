@@ -1,7 +1,4 @@
-__pycache__
 .env
-.mypy_cache
-datastore/WEB-INF/appengine-generated
 node_modules
-src/static/dist
+static/dist
 venv

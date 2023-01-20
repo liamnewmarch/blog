@@ -1,12 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { minify } = require('html-minifier');
 
-/** @typedef {import('@11ty/eleventy').UserConfig} UserConfig */
-
-/**
- * @param {UserConfig} config
- * @return {UserConfig}
- */
 module.exports = function(config) {
   // Copy static files
   config.addPassthroughCopy({ static: '/' });

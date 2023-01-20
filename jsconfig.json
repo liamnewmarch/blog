@@ -8,6 +8,8 @@
     "target": "esnext"
   },
   "include": [
-    "static/**/*.js"
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.mjs",
   ]
 }

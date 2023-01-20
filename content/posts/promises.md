@@ -1,6 +1,8 @@
 ---
-published: 2014-07-14
+date: 2014-07-14
 summary: Remember when promises were the hot new thing? This article does too.
+layout: posts/post.njk
+tags: post
 title: Making Promises – Building a script loader with ES6 Promises
 ---
 

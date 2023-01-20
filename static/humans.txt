@@ -1,4 +1,4 @@
-Hello, world! 👋
+Hello, world 👋
 
 Thanks for checking out my humans.txt.
 
@@ -7,8 +7,7 @@ can find the source for it on GitHub:
 
     https://github.com/liamnewmarch/liam.nwmr.ch
 
-I also love talking with like-minded tech folk. Lets be friends! You can find
-me on most social media as liamnewmarch, and as @liamnewmarch@mastodon.social
-on Mastodon.
+I also love talking with like-minded tech folk. Let’s be friends! You can find
+me as @liam@nwmr.ch on Mastodon and liamnewmarch on most other social media.
 
 Have a good one 🌱

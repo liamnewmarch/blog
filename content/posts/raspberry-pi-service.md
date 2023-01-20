@@ -1,6 +1,8 @@
 ---
-published: 2021-06-12
+date: 2021-06-12
 summary: Learn how to use systemd to run a simple python service
+layout: posts/post.njk
+tags: post
 title: How to make your own Raspberry Pi service
 ---
 
@@ -40,7 +42,7 @@ To make this into a fully fledged service managed by systemd we need to create a
 sudo nano /etc/systemd/system/timestamp.service
 ```
 
-```
+```ini
 [Unit]
 Description=My timestamp service
 After=mult-user.target

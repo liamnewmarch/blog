@@ -1,6 +1,8 @@
 ---
-published: 2018-05-30
+date: 2018-05-30
 summary: Explore the CSS Paint API, a Houdini spec which allows you to define new paint behaviours.
+layout: posts/post.njk
+tags: post
 title: An introduction to the CSS Paint API
 ---
 

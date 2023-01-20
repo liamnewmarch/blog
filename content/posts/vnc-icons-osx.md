@@ -1,6 +1,8 @@
 ---
-published: 2014-02-05
+date: 2014-02-05
 summary: Or, how to use icons for Screen Share (VNC) shortcuts in your Dock.
+layout: posts/post.njk
+tags: post
 title: Pimp your macOS shortcuts with system icons
 ---
 

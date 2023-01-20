@@ -1,6 +1,8 @@
 ---
-published: 2013-05-08
+date: 2013-05-08
 summary: (Obsolete) A tool for estimating the age of a webpage by its jQuery version.
+layout: posts/post.njk
+tags: post
 title: Carbon Date for jQuery
 unlisted: true
 ---

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="Liam Newmarch lives in Yorkshire and makes things for the web.">
+    <title>{% if title %}{{ title }} | {% endif %}Liam Newmarch</title>
+    <link href="/index.css" rel="stylesheet">
+    <link href="/favicon.png" rel="icon" sizes="512x512" type="image/png">
+    <link href="/humans.txt" rel="author">
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    <header>
+      {% block header %}
+        <a href="/">
+          <h2>← Liam Newmarch</h2>
+        </a>
+      {% endblock %}
+    </header>
+    {% block content %}{% endblock %}
+  </body>
+</html>

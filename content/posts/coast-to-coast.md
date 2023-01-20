@@ -1,6 +1,8 @@
 ---
-published: 2014-07-24
+date: 2014-07-24
 summary: I hiked from one coast of the country to the other for a special occasion.
+layout: posts/post.njk
+tags: post
 title: Coast to Coast
 ---
 

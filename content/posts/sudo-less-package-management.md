@@ -1,6 +1,8 @@
 ---
-published: 2015-09-15
+date: 2015-09-15
 summary: An old take on setting up Homebrew and npm on macOS.
+layout: posts/post.njk
+tags: post
 title: OS X package management, without sudo
 ---
 

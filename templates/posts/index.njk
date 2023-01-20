@@ -1,0 +1,17 @@
+{% extends 'templates/base.njk' %}
+
+{% block content %}
+  <section>
+    <h1>{{ title }}</h1>
+    <ul>
+      {% for post in collections.post | published | reverse %}
+        <li>
+          <a href="{{ post.url }}">
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.summary }}</p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

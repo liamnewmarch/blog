@@ -1,6 +1,8 @@
 ---
-published: 2015-04-07
+date: 2015-04-07
 summary: Get a numeric value from only eleven lines of code.
+layout: posts/post.njk
+tags: post
 title: Using range inputs with AngularJS
 ---
 

@@ -2,20 +2,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rm -rf static/dist static/meta.json",
-    "prebase": "npm run clean",
-    "base": "esbuild ./static --bundle --outdir=static/dist",
-    "analyse": "npm run build -- --analyze=verbose",
-    "build": "npm run base -- --entry-names=[hash] --metafile=static/meta.json --minify",
-    "start": "npm run base -- --entry-names=bundle --serve=3000 --servedir=static --sourcemap",
+    "build": "npm run clean && eleventy",
+    "clean": "rm -rf build",
+    "start": "npm run clean && eleventy --port 3000 --serve",
     "test": "eslint static"
   },
   "dependencies": {
-    "esbuild": "^0.15.15",
-    "stackdriver-errors-js": "^0.12.0"
+    "@11ty/eleventy": "^2.0.0-beta.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "html-minifier": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.28.0",
+    "eslint": "8.32",
     "eslint-config-google": "^0.14.0"
   }
 }

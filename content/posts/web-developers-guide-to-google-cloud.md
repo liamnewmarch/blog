@@ -4,9 +4,11 @@ summary: An overview to help you decide which service is right for your use case
 layout: posts/post.njk
 tags: post
 title: A web developer’s guide to Google Cloud
+image:
+  url: /posts/img/web-developers-guide-to-google-cloud.avif
+  width: 1554
+  height: 1036
 ---
-
-![](https://lh3.googleusercontent.com/pw/ACtC-3f7YvHfKzaEB-oyN8yVVkU2li48LrxJiJJQMro910gemu5IIJXhSdvelHBBnCXnod6LFmNNRXQZaZHE_NFanEyUBjQLm2lZ11rAyrA5sn2p_r5rDFEL4lI-Z-o1RtaLuFWUHAKn3maN5tFxyT_R8Keb=w1500-h1000-no)
 
 At Potato we proudly use [Google Cloud](https://cloud.google.com/) services to host our projects (except in cases where a client has a preference for another cloud provider) and have used [App Engine](https://cloud.google.com/appengine/) since the beginning. This has had numerous benefits for us as a business, not least in the current [remote working](https://dev.p.ota.to/post/how-potato-code-remotely-4q64vuq2wb5/) climate.
 

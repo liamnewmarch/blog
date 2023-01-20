@@ -4,9 +4,11 @@ summary: Mirror the real world by flipping your icons with CSS, rather than rota
 layout: posts/post.njk
 tags: post
 title: 'CSS tip: flipping elements'
+image:
+  url: /posts/img/css-tip-flipping-elements.avif
+  width: 1554
+  height: 1166
 ---
-
-![](https://drive.google.com/uc?id=1Uys3Z_Pq65P-GIpY0WwFlQTMXWgzWVYB)
 
 Sometimes, when building out a website you might come across the same icon in different orientations. A common example of this is when you have an arrow pointing left and an arrow pointing right which are otherwise identical. In situations like this you can use [CSS transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) instead of serving two images.
 

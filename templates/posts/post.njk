@@ -1,9 +1,5 @@
 {% extends 'templates/base.njk' %}
 
-{% block head %}
-  {#  <link href="/css/code-theme.css" rel="stylesheet"> #}
-{% endblock %}
-
 {% block content %}
   <article>
     <header>
@@ -15,8 +11,16 @@
         </time>
         </p>
       </aside>
+      {% if image and image.url %}
+        <img
+          src="{{ image.url }}"
+          {% if image.alt %} alt="{{ image.alt }}" {% else %} alt="" role="presentation" {% endif %}
+          {% if image.height %} height="{{ image.height }}" {% endif %}
+          {% if image.width %} width="{{ image.width }}" {% endif %}
+        >
+      {% endif %}
     </header>
 
     {{ content | safe }}
   </article>
-{% endblock content%}
+{% endblock %}

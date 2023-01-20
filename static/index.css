@@ -25,6 +25,8 @@ article a:any-link {
 }
 
 img {
+  display: block;
+  height: auto;
   max-width: 100%;
 }
 

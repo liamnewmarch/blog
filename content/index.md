@@ -13,6 +13,12 @@ social:
     - name: Pixelfed
       url: https://pixelfed.social/i/web/profile/495172525507047398
       username: '@liamnewmarch@pixelfed.social'
+    - name: Threads
+      url: https://www.threads.net/@liamnewmarch
+      username: liamnewmarch
+    - name: Instagram
+      url: https://www.instagram.com/liamnewmarch/
+      username: liamnewmarch
     - name: GitHub
       url: https://github.com/liamnewmarch
       username: liamnewmarch
@@ -26,6 +32,6 @@ social:
 
 ---
 
-# Hello, world 👋
+# Hello, world
 
 My name is Liam, I live in Yorkshire and make things for the web.

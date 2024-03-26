@@ -1,16 +1,16 @@
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const { minify } = require('html-minifier');
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import { minify } from 'html-minifier'
 
-module.exports = function(config) {
+export default function(config) {
   // Copy static files
-  config.addPassthroughCopy({ static: '/' });
+  config.addPassthroughCopy({ static: '/' })
 
   // Code block syntax highlighting
-  config.addPlugin(syntaxHighlight);
+  config.addPlugin(syntaxHighlight)
 
   // Minify all HTML output
   config.addTransform('htmlmin', (content, path) => {
-    if (!path.endsWith('.html')) return content;
+    if (!path.endsWith('.html')) return content
     return minify(content, {
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
@@ -19,8 +19,8 @@ module.exports = function(config) {
       removeComments: true,
       sortAttributes: true,
       sortClassName: true,
-    });
-  });
+    })
+  })
 
   // Template filter to format dates
   config.addFilter('date', (date, format = 'iso') => {
@@ -30,22 +30,22 @@ module.exports = function(config) {
           day: 'numeric',
           month: 'long',
           year: 'numeric',
-        }).format(date);
+        }).format(date)
       case 'iso':
       default:
-        return date.toISOString().split('T')[0];
+        return date.toISOString().split('T')[0]
     }
-  });
+  })
 
   // Template filter to limit an array length
-  config.addFilter('limit', (items, limit) => {
-    return items.slice(0, limit);
-  });
+  config.addFilter('limit', (items, limit, offset = 0) => {
+    return items.slice(offset, limit)
+  })
 
   // Template filter to filter unlisted posts
   config.addFilter('published', (posts) => {
-    return posts.filter((post) => !post.data.unlisted);
-  });
+    return posts.filter((post) => !post.data.unlisted)
+  })
 
   // Change default dirs
   return {
@@ -55,5 +55,5 @@ module.exports = function(config) {
       output: 'build',
     },
     markdownTemplateEngine: 'njk',
-  };
-};
+  }
+}

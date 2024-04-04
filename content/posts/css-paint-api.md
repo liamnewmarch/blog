@@ -1,9 +1,7 @@
 ---
 date: 2018-05-30
-summary: Explore the CSS Paint API, a Houdini spec which allows you to define new paint behaviours.
-layout: posts/post.njk
-tags: post
 title: An introduction to the CSS Paint API
+summary: Explore the CSS Paint API, a Houdini spec which allows you to define new paint behaviours.
 ---
 
 A few years ago there were rumblings about a specification coming to CSS nicknamed _Houdini_. [First described](https://www.smashingmagazine.com/2016/03/houdini-maybe-the-most-exciting-development-in-css-youve-never-heard-of/) as a way of writing polyfills for CSS, Houdini is a [suite of APIs](https://drafts.css-houdini.org/) which give developers programmatic control over layout, paint, animation and more.

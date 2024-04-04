@@ -1,5 +1,6 @@
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import { minify } from 'html-minifier'
+import yaml from 'js-yaml'
 
 export default function(config) {
   // Copy static files
@@ -47,9 +48,15 @@ export default function(config) {
     return posts.filter((post) => !post.data.unlisted)
   })
 
+  // Support YAML global data files
+  config.addDataExtension('yaml', (contents) => {
+    return yaml.load(contents)
+  })
+
   // Change default dirs
   return {
     dir: {
+      data: '../data',
       includes: '../templates',
       input: 'content',
       output: 'build',

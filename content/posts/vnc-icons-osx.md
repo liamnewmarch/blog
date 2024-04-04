@@ -1,9 +1,7 @@
 ---
 date: 2014-02-05
-summary: Or, how to use icons for Screen Share (VNC) shortcuts in your Dock.
-layout: posts/post.njk
-tags: post
 title: Pimp your macOS shortcuts with system icons
+summary: Or, how to use icons for Screen Share (VNC) shortcuts in your Dock.
 ---
 
 I use VNC (aka Screen Share) a lot, so I keep a folder of frequently accessed machines on my Dock.

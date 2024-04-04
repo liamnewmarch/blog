@@ -1,9 +1,7 @@
 ---
 date: 2015-04-07
-summary: Get a numeric value from only eleven lines of code.
-layout: posts/post.njk
-tags: post
 title: Using range inputs with AngularJS
+summary: Get a numeric value from only eleven lines of code.
 ---
 
 I was working on an AngularJS project recently that used HTML input sliders like this:

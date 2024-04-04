@@ -1,9 +1,7 @@
 ---
 date: 2014-08-18
-summary: A short guide to updating globally installed npm packages.
-layout: posts/post.njk
-tags: post
 title: Updating npm packages
+summary: A short guide to updating globally installed npm packages.
 unlisted: true
 ---
 

@@ -1,9 +1,7 @@
 ---
 date: 2015-09-15
-summary: An old take on setting up Homebrew and npm on macOS.
-layout: posts/post.njk
-tags: post
 title: OS X package management, without sudo
+summary: An old take on setting up Homebrew and npm on macOS.
 ---
 
 Recently, I had to use a shared company MacBook for a web dev project. Knowing this shared device would only be mine for a few weeks, I wanted to be able to delete everything when I was done.

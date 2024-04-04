@@ -1,9 +1,12 @@
 ---
 date: 2021-06-12
-summary: Learn how to use systemd to run a simple python service
-layout: posts/post.njk
-tags: post
 title: How to make your own Raspberry Pi service
+summary: Learn how to use systemd to run a simple python service
+image:
+  url: /posts/img/raspberry-pi-service.avif
+  height: 1080
+  width: 1920
+
 ---
 
 Many Raspberry Pi projects involve running a program continually in the background. In this guide we’re going to look at how we can use part of the system that powers the Raspberry Pi, systemd, to run a custom Python script in the background, starting when the device powers on.

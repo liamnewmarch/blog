@@ -1,9 +1,7 @@
 ---
 date: 2013-05-06
-summary: (Obsolete) Android app that lets you set a website as your screensaver.
-layout: posts/post.njk
-tags: post
 title: Website Daydream
+summary: (Obsolete) Android app that lets you set a website as your screensaver.
 unlisted: true
 ---
 

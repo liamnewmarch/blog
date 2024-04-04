@@ -1,9 +1,7 @@
 ---
 date: 2020-06-10
-summary: An overview to help you decide which service is right for your use case.
-layout: posts/post.njk
-tags: post
 title: A web developer’s guide to Google Cloud
+summary: An overview to help you decide which service is right for your use case.
 image:
   url: /posts/img/web-developers-guide-to-google-cloud.avif
   width: 1554

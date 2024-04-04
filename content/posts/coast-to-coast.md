@@ -1,9 +1,7 @@
 ---
 date: 2014-07-24
-summary: I hiked from one coast of the country to the other for a special occasion.
-layout: posts/post.njk
-tags: post
 title: Coast to Coast
+summary: I hiked from one coast of the country to the other for a special occasion.
 ---
 
 This year is my father’s 50th birthday. To celebrate we’re attempting the [Coast to Coast Walk](http://en.wikipedia.org/wiki/Coast_to_Coast_Walk) which will take us across the England, from Whitehaven in Cumbria to Robin Hood’s Bay in North Yorkshire.

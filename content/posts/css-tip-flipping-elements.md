@@ -1,9 +1,7 @@
 ---
 date: 2018-07-25
-summary: Mirror the real world by flipping your icons with CSS, rather than rotating.
-layout: posts/post.njk
-tags: post
 title: 'CSS tip: flipping elements'
+summary: Mirror the real world by flipping your icons with CSS, rather than rotating.
 image:
   url: /posts/img/css-tip-flipping-elements.avif
   width: 1554

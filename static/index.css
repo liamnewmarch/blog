@@ -1,7 +1,28 @@
+:root {
+  --off-black: #121212;
+  --panda-black: #292A2B;
+  --panda-blue: #45a9f9;
+  --panda-cyan: #6fc1ff;
+  --panda-green: #19f9d8;
+  --panda-light-blue: #6fc1ff;
+  --panda-light-grey: #e6e6e6;
+  --panda-light-orange: #ffcc95;
+  --panda-light-pink: #ff9ac1;
+  --panda-medium-grey: #676b79;
+  --panda-orange: #ffb86c;
+  --panda-pink: #ff75b5;
+  --panda-purple: #b084eb;
+  --panda-red: #ff2c6d;
+  --panda-white: #fff;
+}
+
 html {
-  accent-color: #fff;
-  color-scheme: dark light;
+  accent-color: var(--panda-light-blue);
+  background-color: var(--off-black);
+  color: var(--panda-white);
+  color-scheme: dark;
   font: 300 100% / 1.5 system-ui, sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
   font-feature-settings: 'liga';
   text-rendering: geometricPrecision;
 }
@@ -9,136 +30,231 @@ html {
 body {
   margin: 0 auto;
   max-width: 80ch;
-  padding: 1rem;
+  padding: 2rem;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem 0;
 }
 
 a {
-  color: inherit;
-}
+  color: var(--panda-light-blue);
+  transition: color .1s ease;
 
-a:not(:hover) {
-  text-decoration: unset;
-}
-
-article a:any-link {
-  text-decoration: underline;
-}
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
-li a {
-  display: inline-grid;
-}
-
-li h3:not(:last-child) {
-  margin-bottom: 0;
-}
-
-table {
-  border: 1px solid Highlight;
-  border-collapse: separate;
-  border-radius: .5rem;
-  border-spacing: .5rem;
-  width: 100%;
-
-  th,
-  td {
-    border: 1px solid Highlight;
-    border-radius: .2rem;
-    padding: .5rem 1rem;
+  &:hover {
+    color: var(--panda-pink);
   }
 
-  td {
-    text-align: right;
+  &:not(:hover) {
+    text-decoration: unset;
   }
 }
+
+.posts {
+  list-style: none;
+  padding: 0;
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    &:hover h3 {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    color: var(--panda-white);
+  }
+}
+
+article {
+  border-block-end: 1px solid var(--panda-medium-grey);
+  margin-block-end: 2rem;
+  padding-block-end: 2rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-block: 1rem;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  kbd {
+    background-color: var(--panda-light-grey);
+    border-radius: .5em;
+    color: var(--panda-black);
+    white-space: nowrap;
+  }
+
+  aside {
+    p:first-of-type {
+      color: var(--panda-light-grey);
+    }
+
+    p:last-of-type {
+      color: var(--panda-medium-grey);
+      font-style: italic;
+    }
+  }
+
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  table {
+    border: 1px solid var(--panda-light-blue);
+    border-collapse: separate;
+    border-radius: .5rem;
+    border-spacing: .5rem;
+    width: 100%;
+
+    th,
+    td {
+      border: 1px solid var(--panda-light-blue);
+      border-radius: .2rem;
+      padding: .5rem 1rem;
+    }
+
+    td {
+      text-align: right;
+    }
+  }
+
+  :not(pre) > code,
+  kbd {
+    line-height: 1.3;
+    padding: .1em .5em;
+    margin-inline: .25em;
+    white-space: nowrap;
+  }
+
+  :not(pre) > code,
+  pre[class^="language-"] {
+    background-color: var(--panda-black);
+    border-radius: .5rem;
+    color: var(--panda-white);
+    font: normal 1em 'Fira Code', monospace;
+  }
+
+  pre[class^="language-"] {
+    line-height: 1.3;
+    overflow: auto;
+    padding: 1rem;
+  }
+}
+
+footer li a {
+  display: inline-block;
+  padding-block: .5rem;
+}
+
 
 pre[class^="language-"] {
-  background-color: #111;
-  color: #fff;
-  padding: 1rem;
-}
-
-@media (prefers-color-scheme: light) {
-  pre[class^="language-"] {
-    filter: invert();
+  .comment {
+    color: var(--panda-medium-grey);
   }
-}
 
-/* Syntax highlighting theme */
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #608b4e;
-}
-.token.punctuation {
-  color: #ccc;
-}
-.token.tag,
-.token.namespace,
-.token.deleted {
-  color: #4ec9b0;
-}
-.token.attr-name {
-  color: #9cdcfe;
-}
-.token.function-name {
-  color: #6196cc;
-}
-.token.boolean {
-  color: #569cd6;
-}
-.token.number {
-  color: #B5cea8;
-}
-.token.function {
-  color: #dcdcaa;
-}
-.token.property,
-.token.constant,
-.token.symbol {
-  color: #f8c555;
-}
-.token.class-name {
-  color: #4ec9b0;
-}
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: #c586c0;
-}
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: #ce9169;
-}
-.token.operator {
-  color: #d4d4d4;
-}
-.token.entity,
-.token.url {
-  color: #67cdcc;
-}
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
-}
-.token.entity {
-  cursor: help;
-}
-.token.inserted {
-  color: #0f0;
+  .language-html {
+    .doctype,
+    .tag {
+      color: var(--panda-red);
+    }
+
+    .attr-value {
+      color: var(--panda-green);
+    }
+
+    .attr-name,
+    .entity,
+    .name {
+      color: var(--panda-orange);
+    }
+
+    .attr-equals {
+      color: var(--panda-white);
+    }
+  }
+
+  .language-css {
+    .function {
+      color: var(--panda-blue);
+    }
+
+    .rule {
+      color: var(--panda-purple);
+    }
+
+    .selector {
+      color: var(--panda-orange);
+    }
+
+    .string {
+      color: var(--panda-green);
+    }
+  }
+
+  .language-javascript,
+  .language-js,
+  .language-py,
+  .language-python,
+  .language-typescript,
+  .language-ts {
+    .function {
+      color: var(--panda-cyan);
+    }
+
+    .keyword {
+      color: var(--panda-pink);
+    }
+
+    .string {
+      color: var(--panda-green);
+    }
+
+    .builtin {
+      color: var(--panda-light-orange);
+    }
+
+    .boolean,
+    .number {
+      color: var(--panda-orange);
+    }
+  }
+
+  .language-bash,
+  .language-sh,
+  .language-shell {
+    .boolean,
+    .number,
+    .parameter {
+      color: var(--panda-orange);
+    }
+
+    .builtin {
+      color: var(--panda-pink);
+    }
+
+    .function {
+      color: var(--panda-blue);
+    }
+
+    .string {
+      color: var(--panda-green);
+    }
+  }
 }

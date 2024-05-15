@@ -7,7 +7,7 @@
 {% block content %}
   <section>
     <h2>{{ posts.title }}</h2>
-    <ul>
+    <ul class="posts">
       {% for post in collections.post | published | reverse | limit(4) %}
         {% if not post.data.unlisted %}
           <li>
@@ -20,21 +20,4 @@
       {% endfor %}
     </ul>
   </section>
-
-  <footer>
-    <h2>{{ social.title }}</h2>
-    <ul>
-      {% for item in social.links %}
-        <li>
-          <a href="{{ item.url }}" rel="me">
-            {% if item.username %}
-              {{ item.name }} ({{ item.username }})
-            {% else %}
-              {{ item.name }}
-            {% endif %}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </footer>
 {% endblock %}

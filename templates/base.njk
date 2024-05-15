@@ -15,11 +15,29 @@
   <body>
     <header>
       {% block header %}
-        <a href="/">
-          <h2>← Liam Newmarch</h2>
-        </a>
+        <nav>
+          <a href="/">
+            ← Back
+          </a>
+        </nav>
       {% endblock %}
     </header>
     {% block content %}{% endblock %}
+    <footer>
+      <h2>{{ footer.title }}</h2>
+      <ul>
+        {% for item in footer.links %}
+          <li>
+            <a href="{{ item.url }}" rel="me">
+              {% if item.username %}
+                {{ item.name }} ({{ item.username }})
+              {% else %}
+                {{ item.name }}
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </footer>
   </body>
 </html>

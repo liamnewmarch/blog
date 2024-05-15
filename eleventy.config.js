@@ -26,6 +26,10 @@ export default function(config) {
   // Template filter to format dates
   config.addFilter('date', (date, format = 'iso') => {
     switch (format) {
+      case 'year':
+        return new Intl.DateTimeFormat('en', {
+          year: 'numeric',
+        }).format(date)
       case 'long':
         return new Intl.DateTimeFormat('en', {
           day: 'numeric',

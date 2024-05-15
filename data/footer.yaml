@@ -1,4 +1,5 @@
-title: Around the web
+post_article: If you enjoyed this article let me know! You can find me at the places below, we should be friends.
+title: Find me on the web
 links:
   - name: Mastodon
     url: https://nwmr.ch/@liam
@@ -22,3 +23,7 @@ links:
     url: https://stackoverflow.com/users/163142/liam-newmarch
   - name: Contact form
     url: https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8
+legal:
+  - Posts and content are &copy; <current-year></current-year> Liam Newmarch. Theme can be found on <a href="https://github.com/liamnewmarch/blog">GitHub</a> under an MIT license 🎨
+  - This site was coded by hand and is built with <a href="https://www.11ty.dev">Eleventy</a> 🩵
+  - No AI was used in the creation of this blog 🤖

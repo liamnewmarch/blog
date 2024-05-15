@@ -10,7 +10,8 @@
     <link href="/favicon.png" rel="icon" sizes="512x512" type="image/png">
     <link href="/humans.txt" rel="author">
     {% block head %}{% endblock head %}
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e5f2d8f6dc72407bb1c58e11d9d4dfc4"}'></script>
+    <script defer src="/index.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "e5f2d8f6dc72407bb1c58e11d9d4dfc4"}'></script>
   </head>
   <body>
     <header>
@@ -23,21 +24,28 @@
       {% endblock %}
     </header>
     {% block content %}{% endblock %}
-    <footer>
-      <h2>{{ footer.title }}</h2>
-      <ul>
-        {% for item in footer.links %}
-          <li>
-            <a href="{{ item.url }}" rel="me">
-              {% if item.username %}
-                {{ item.name }} ({{ item.username }})
-              {% else %}
-                {{ item.name }}
-              {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </footer>
+    {% block footer %}
+      <footer class="footer">
+        <h2>{{ footer.title }}</h2>
+        <ul class="links">
+          {% for item in footer.links %}
+            <li>
+              <a href="{{ item.url }}" rel="me">
+                {% if item.username %}
+                  {{ item.name }} ({{ item.username }})
+                {% else %}
+                  {{ item.name }}
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="legal">
+          {% for line in footer.legal %}
+            <p>{{ line | safe }}</p>
+          {% endfor %}
+        </div>
+      </footer>
+    {% endblock %}
   </body>
 </html>

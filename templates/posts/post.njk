@@ -25,3 +25,8 @@
     {{ content | safe }}
   </article>
 {% endblock %}
+
+{% block footer %}
+  <p>{{ footer.post_article }}</p>
+  {{ super() }}
+{% endblock %}

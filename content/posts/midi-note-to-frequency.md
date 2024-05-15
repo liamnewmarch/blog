@@ -49,5 +49,3 @@ export function noteToFrequency(note, {
 ## Wrapping up
 
 I could go on. There’s so much to talk about, like how these frequencies are [a compromise](https://en.wikipedia.org/wiki/Equal_temperament) that don’t [align with nature](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)) but that sound good enough to our ears… but that’s an article for a another day.
-
-If you enjoyed this article let me know! You can find me at [these places](/find-me/), we should be friends.

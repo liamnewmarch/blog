@@ -158,9 +158,21 @@ article {
   }
 }
 
-footer li a {
-  display: inline-block;
-  padding-block: .5rem;
+.footer {
+  .links {
+    color: var(--panda-medium-grey);
+    margin: 0;
+    padding-inline-start: 1rem;
+
+    a {
+      display: inline-block;
+      padding-block: .5rem;
+    }
+  }
+
+  .legal {
+    color: var(--panda-medium-grey);
+  }
 }
 
 

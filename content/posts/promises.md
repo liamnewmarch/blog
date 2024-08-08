@@ -1,7 +1,7 @@
 ---
 date: 2014-07-14
-title: Making Promises – Building a script loader with ES6 Promises
-summary: Remember when promises were the hot new thing? This article does too.
+title: An introduction to Promises in JavaScript
+summary: Learn how Promises work by building a simple script loader
 ---
 
 Promises are making a big splash in the JavaScript world. They are a way of handling _asynchronous logic_ in a way that avoids nested callbacks. In this post I hope to explain why Promises are useful, and how you can start using them today.

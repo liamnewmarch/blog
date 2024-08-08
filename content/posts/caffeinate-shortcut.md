@@ -1,6 +1,6 @@
 ---
 date: 2024-02-19
-title: Caffeinate to stay awake
+title: macOS Caffeinate Shortcut
 summary: How to use Shortcuts to prevent your Mac from sleeping
 image:
   url: /posts/img/caffeinate-shortcut.avif

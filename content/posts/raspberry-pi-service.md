@@ -1,6 +1,6 @@
 ---
 date: 2021-06-12
-title: How to make your own Raspberry Pi service
+title: How to make a systemd service for Raspberry Pi
 summary: Learn how to use systemd to run a simple python service
 image:
   url: /posts/img/raspberry-pi-service.avif

@@ -1,6 +1,6 @@
 ---
 date: 2014-02-05
-title: Pimp your macOS shortcuts with system icons
+title: Pimp your VNC shortcuts with macOS system icons
 summary: Or, how to use icons for Screen Share (VNC) shortcuts in your Dock.
 ---
 

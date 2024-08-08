@@ -51,6 +51,15 @@ a {
   }
 }
 
+header img {
+  border: 1px solid var(--panda-white);
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px var(--panda-blue), 0 0 0 2px var(--panda-red), 0 0 0 3px var(--panda-white);
+  display: block;
+  margin-inline: 1rem;
+  transition: all 300ms ease;
+}
+
 .posts {
   list-style: none;
   padding: 0;

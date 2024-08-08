@@ -5,7 +5,7 @@ Thanks for checking out my humans.txt.
 I like coding things! If you’re interested in this site and how it’s made, you
 can find the source for it on GitHub:
 
-    https://github.com/liamnewmarch/liam.nwmr.ch
+    https://github.com/liamnewmarch/blog
 
 I also love talking with like-minded tech folk. Let’s be friends! You can find
 me as @liam@nwmr.ch on Mastodon and liamnewmarch on most other social media.

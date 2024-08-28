@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        run: rsync -aghovz --chown=${{ secrets.DEPLOY_USER }}:${{ secrets.DEPLOY_GROUP }} build/ ${{ secrets.DEPLOY_PATH }}
+        run: rsync -aghoz --info=stats --chown=${{ secrets.DEPLOY_USER }}:${{ secrets.DEPLOY_GROUP }} build/ ${{ secrets.DEPLOY_PATH }}

@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run clean && eleventy",
+    "build": "npm run clean && eleventy --quiet",
     "clean": "rm -rf build",
     "start": "npm run clean && eleventy --port 3000 --serve",
     "test": "eslint static"

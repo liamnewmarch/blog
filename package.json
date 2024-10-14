@@ -8,11 +8,12 @@
     "test": "eslint static"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.10",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^9.3.0"
+    "eslint": "^9.12.0"
   }
 }

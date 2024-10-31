@@ -1,4 +1,4 @@
-name: Build and deploy
+name: Build
 
 on:
   push:
@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout content
+        uses: actions/checkout@v4
+        with:
+          path: content
+          repository: liamnewmarch/blog-posts
+          token: ${{ secrets.TOKEN }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

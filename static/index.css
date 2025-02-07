@@ -14,6 +14,13 @@
   --panda-purple: #b084eb;
   --panda-red: #ff2c6d;
   --panda-white: #fff;
+
+  --border: linear-gradient(
+    to right,
+    var(--panda-light-blue),
+    var(--panda-red)
+  );
+  --border-height: 2px;
 }
 
 html {
@@ -27,14 +34,10 @@ html {
   text-rendering: geometricPrecision;
 
   &::before {
-    background: linear-gradient(
-      to right,
-      var(--panda-light-blue),
-      var(--panda-red)
-    );
+    background: var(--border);
     content: '';
     display: block;
-    height: 2px;
+    height: var(--border-height);
     position: fixed;
     right: 0;
     top: 0;
@@ -42,22 +45,26 @@ html {
   }
 
   &::after {
-    background: linear-gradient(
-      to right,
-      var(--panda-light-blue),
-      var(--panda-red)
-    );
+    background: var(--border);
     content: '';
     display: block;
-    height: 2px;
+    height: var(--border-height);
     width: 100%;
   }
 }
 
 body {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
   margin: 0 auto;
   max-width: 80ch;
+  min-height: calc(100vh - var(--border-height));
   padding: 2rem;
+
+  > header + * {
+    flex-grow: 1;
+  }
 }
 
 blockquote {

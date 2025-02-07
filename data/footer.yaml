@@ -1,18 +1,12 @@
-post_article: If you enjoyed this article let me know! You can find me at the places below, we should be friends.
+post_article: If you enjoyed this article let me know! You can find me at the places below.
 title: Find me on the web
 links:
+  - name: Bluesky
+    url: https://bsky.app/profile/liam.nwmr.ch
+    username: '@liam.nwmr.ch'
   - name: Mastodon
     url: https://nwmr.ch/@liam
     username: '@liam@nwmr.ch'
-  - name: Pixelfed
-    url: https://pixelfed.social/i/web/profile/495172525507047398
-    username: '@liamnewmarch@pixelfed.social'
-  - name: Threads
-    url: https://www.threads.net/@liamnewmarch
-    username: liamnewmarch
-  - name: Instagram
-    url: https://www.instagram.com/liamnewmarch/
-    username: liamnewmarch
   - name: GitHub
     url: https://github.com/liamnewmarch
     username: liamnewmarch
@@ -21,9 +15,9 @@ links:
     username: liamnewmarch
   - name: StackOverflow
     url: https://stackoverflow.com/users/163142/liam-newmarch
-  - name: Contact form
+  - name: Contact
     url: https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8
 legal:
   - Posts and content are &copy; <current-year></current-year> Liam Newmarch. Theme can be found on <a href="https://github.com/liamnewmarch/blog">GitHub</a> under an MIT license 🎨
-  - This site was coded by hand and is built with <a href="https://www.11ty.dev">Eleventy</a> 🩵
+  - This website was coded by hand and is built with <a href="https://www.11ty.dev">Eleventy</a> 🩵
   - No AI was used in the creation of this blog 🤖

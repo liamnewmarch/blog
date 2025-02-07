@@ -31,10 +31,9 @@
           {% for item in footer.links %}
             <li>
               <a href="{{ item.url }}" rel="me">
+                {{ item.name }}
                 {% if item.username %}
-                  {{ item.name }} ({{ item.username }})
-                {% else %}
-                  {{ item.name }}
+                  ({{ item.username }})
                 {% endif %}
               </a>
             </li>

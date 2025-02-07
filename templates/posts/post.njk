@@ -1,5 +1,15 @@
 {% extends 'templates/base.njk' %}
 
+{% block header %}
+  <nav>
+    <a href="/">Liam Newmarch</a>
+    &rsaquo;
+    <a href="/posts/">Posts</a>
+    &rsaquo;
+    {{ title}}
+  </nav>
+{% endblock %}
+
 {% block content %}
   <article>
     <header>
@@ -27,6 +37,6 @@
 {% endblock %}
 
 {% block footer %}
-  <p>{{ footer.post_article }}</p>
+  <p>{{ footer.post | safe }}</p>
   {{ super() }}
 {% endblock %}

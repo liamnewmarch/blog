@@ -13,6 +13,9 @@
         {% if not post.data.unlisted %}
           <li>
             <a href="{{ post.url }}">
+              <time datetime="{{ post.date | date }}">
+                {{ post.date | date('long') }}
+              </time>
               <h3>{{ post.data.title }}</h3>
               <p>{{ post.data.summary }}</p>
             </a>
@@ -21,4 +24,21 @@
       {% endfor %}
     </ul>
   </section>
+{% endblock %}
+
+{% block footer %}
+  <footer>
+    <p>
+      Lesser pages:
+      {% for page in pages %}
+        <a href="{{ page.url }}">
+          {{ page.title }}
+        </a>
+        {% if not loop.last %}
+          &bull;
+        {% endif %}
+      {% endfor %}
+    </p>
+    {{ super() }}
+  </footer>
 {% endblock %}

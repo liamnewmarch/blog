@@ -109,14 +109,21 @@ img {
   a {
     display: block;
     text-decoration: none;
+    margin-bottom: 2rem;
 
     &:hover h3 {
       text-decoration: underline;
     }
   }
 
+  time {
+    font-size: .64rem;
+    margin: 0;
+  }
+
   h3 {
     font-size: 1.125rem;
+    margin: 0;
   }
 
   p {
@@ -210,22 +217,18 @@ article {
 }
 
 .footer {
-  .links {
-    color: var(--panda-medium-grey);
-    margin: 0;
-    padding-inline-start: 1rem;
-
-    a {
-      display: inline-block;
-      padding-block: .5rem;
-    }
-  }
-
-  .legal {
-    color: var(--panda-medium-grey);
-  }
+  color: var(--panda-medium-grey);
 }
 
+.contact ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+
+  a {
+    display: inline-block;
+    padding-block: .5rem;
+  }
+}
 
 pre[class^="language-"] {
   .comment {

@@ -17,33 +17,20 @@
     <header>
       {% block header %}
         <nav>
-          <a href="/">
-            ← Back
-          </a>
+          <a href="/">Liam Newmarch</a>
+          &rsaquo;
+          {{ title}}
         </nav>
       {% endblock %}
     </header>
     {% block content %}{% endblock %}
     {% block footer %}
       <footer class="footer">
-        <h2>{{ footer.title }}</h2>
-        <ul class="links">
-          {% for item in footer.links %}
-            <li>
-              <a href="{{ item.url }}" rel="me">
-                {{ item.name }}
-                {% if item.username %}
-                  ({{ item.username }})
-                {% endif %}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-        <div class="legal">
-          {% for line in footer.legal %}
-            <p>{{ line | safe }}</p>
-          {% endfor %}
-        </div>
+        {% for line in footer.common %}
+          <p>
+            {{ line | safe }}
+          </p>
+        {% endfor %}
       </footer>
     {% endblock %}
   </body>

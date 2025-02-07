@@ -7,6 +7,9 @@
       {% for post in collections.post | published | reverse %}
         <li>
           <a href="{{ post.url }}">
+            <time datetime="{{ post.date | date }}">
+              {{ post.date | date('long') }}
+            </time>
             <h3>{{ post.data.title }}</h3>
             <p>{{ post.data.summary }}</p>
           </a>

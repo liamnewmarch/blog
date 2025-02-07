@@ -1,0 +1,20 @@
+{% extends 'templates/base.njk' %}
+
+{% block content %}
+  <section class="contact">
+    <h2>{{ title }}</h2>
+    {{ content | safe }}
+    <ul class="links">
+      {% for item in links %}
+        <li>
+          <a href="{{ item.url }}" rel="me">
+            {{ item.name }}
+            {% if item.username %}
+              ({{ item.username }})
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

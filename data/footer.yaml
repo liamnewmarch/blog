@@ -1,23 +1,8 @@
-post_article: If you enjoyed this article let me know! You can find me at the places below.
-title: Find me on the web
-links:
-  - name: Bluesky
-    url: https://bsky.app/profile/liam.nwmr.ch
-    username: '@liam.nwmr.ch'
-  - name: Mastodon
-    url: https://nwmr.ch/@liam
-    username: '@liam@nwmr.ch'
-  - name: GitHub
-    url: https://github.com/liamnewmarch
-    username: liamnewmarch
-  - name: CodePen
-    url: https://codepen.io/liamnewmarch
-    username: liamnewmarch
-  - name: StackOverflow
-    url: https://stackoverflow.com/users/163142/liam-newmarch
-  - name: Contact
-    url: https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8
-legal:
+# Used by base.njk
+common:
   - Posts and content are &copy; <current-year></current-year> Liam Newmarch. Theme can be found on <a href="https://github.com/liamnewmarch/blog">GitHub</a> under an MIT license 🎨
   - This website was coded by hand and is built with <a href="https://www.11ty.dev">Eleventy</a> 🩵
   - No AI was used in the creation of this blog 🤖
+
+# Used by posts/index.njk
+post: If you enjoyed this article let me know! <a href="/contact/">Check the contact page</a> to see where you can find me on the web

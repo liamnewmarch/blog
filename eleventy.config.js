@@ -1,3 +1,4 @@
+import { feedPlugin } from '@11ty/eleventy-plugin-rss'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import { minify } from 'html-minifier'
 import yaml from 'js-yaml'
@@ -8,6 +9,25 @@ export default function(config) {
 
   // Code block syntax highlighting
   config.addPlugin(syntaxHighlight)
+
+  // RSS feed
+  config.addPlugin(feedPlugin, {
+    collection: {
+      limit: 10,
+      name: 'post',
+    },
+    metadata: {
+			language: 'en-GB',
+			title: 'Liam Newmarch',
+			subtitle: 'Liam Newmarch lives in Yorkshire and makes things for the web.',
+			base: "https://liam.nwmr.ch/",
+			author: {
+				name: "Liam Newmarch",
+			},
+		},
+    outputPath: '/feed.xml',
+    type: 'rss',
+  })
 
   // Minify all HTML output
   config.addTransform('htmlmin', (content, path) => {

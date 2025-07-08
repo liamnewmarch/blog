@@ -1,0 +1,28 @@
+{
+  "subject": "acct:liam@nwmr.ch",
+  "aliases": [
+    "https://mastodon.social/@liamnewmarch",
+    "https://mastodon.social/users/liamnewmarch"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.social/@liamnewmarch"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.social/users/liamnewmarch"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.social/authorize_interaction?uri={uri}"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/jpeg",
+      "href": "https://files.mastodon.social/accounts/avatars/109/247/969/555/323/910/original/7c2969ae78faafda.jpg"
+    }
+  ]
+}

@@ -32,6 +32,7 @@ html {
   font-size: clamp(16px, 2vw, 18px);
   font-feature-settings: 'liga';
   text-rendering: geometricPrecision;
+  text-wrap: pretty;
 
   &::before {
     background: var(--border);

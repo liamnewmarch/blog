@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+
+const { title }: { title?: string } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="color-scheme" content="dark light">
+    <meta name="description" content="Liam Newmarch lives in Yorkshire and makes things for the web.">
+    <title>{[title, 'Liam Newmarch'].filter(Boolean).join(' | ')}</title>
+    <link href="/favicon.png" rel="icon" sizes="512x512" type="image/png">
+    <link href="/humans.txt" rel="author">
+    <link rel="alternate" type="application/rss" href="https://liam.nwmr.ch/feed.xml">
+    <slot name="head" />
+    <script src="../scripts/current-year.ts"></script>
+    {import.meta.env.PROD && (
+      <script is:inline data-entity="liam.nwmr.ch" src="https://analytics.nwmr.ch/script.js" type="module"></script>
+    )}
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <slot name="header">
+          <nav>
+            <a href="/">Liam Newmarch</a>
+            &rsaquo;
+            {title}
+          </nav>
+        </slot>
+      </header>
+      <slot />
+      <footer class="footer">
+        <slot name="footer" />
+        <p>Posts and content are &copy; <current-year></current-year> Liam Newmarch. Theme can be found on <a href="https://github.com/liamnewmarch/blog">GitHub</a> under an MIT license 🎨</p>
+        <p>This website was coded by hand and is built with <a href="https://astro.build">Astro</a> 🚀</p>
+      </footer>
+    </div>
+  </body>
+</html>

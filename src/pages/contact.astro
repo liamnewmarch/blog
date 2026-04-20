@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro'
+import { getEntry, render } from 'astro:content'
+
+const entry = await getEntry('pages', 'contact')
+const { Content } = await render(entry)
+const links = entry.data.links ?? []
+---
+<Base title={entry.data.title}>
+  <section class="contact">
+    <Content />
+    <ul class="links">
+      {links.map(item => (
+        <li>
+          <a href={item.url} rel="me">
+            {item.name}
+            {item.username && ` (${item.username})`}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

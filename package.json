@@ -2,19 +2,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run clean && eleventy --quiet",
-    "clean": "rm -rf build",
-    "start": "npm run clean && eleventy --port 3000 --serve",
-    "test": "eslint static"
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev --port 3000",
+    "test": "eslint src"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^2.0.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "html-minifier": "^4.0.0",
-    "js-yaml": "^4.1.0"
+    "@astrojs/rss": "^4.0.11",
+    "astro": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "9.19"
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
   }
 }

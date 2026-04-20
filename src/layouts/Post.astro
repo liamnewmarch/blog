@@ -1,0 +1,42 @@
+---
+import Base from './Base.astro'
+import { formatDate } from '../utils/date.js'
+
+const { title, summary, date, image } = Astro.props
+---
+<Base title={title}>
+  <Fragment slot="header">
+    <nav>
+      <a href="/">Liam Newmarch</a>
+      &rsaquo;
+      <a href="/posts/">Posts</a>
+      &rsaquo;
+      <span>{title}</span>
+    </nav>
+  </Fragment>
+
+  <Fragment>
+    <article>
+      <header>
+        <h1>{title}</h1>
+        <aside>
+          <p>
+            Posted on
+            <time datetime={formatDate(date)}>{formatDate(date, 'long')}</time>
+          </p>
+        </aside>
+        {image?.url && (
+          <img
+            src={image.url}
+            alt={image.alt ?? ''}
+            height={image.height}
+            width={image.width}
+          />
+        )}
+      </header>
+      <slot />
+    </article>
+
+    <p>If you enjoyed this article please let me know! You can find me on <a href="https://bsky.app/profile/liam.nwmr.ch">Bluesky</a>, <a href="https://mastodon.social/@liamnewmarch">Mastodon</a>, and <a href="/contact/">these other places</a> on the web.</p>
+  </Fragment>
+</Base>

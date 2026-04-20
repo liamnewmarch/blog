@@ -23,7 +23,6 @@
 
 html {
   accent-color: var(--panda-light-blue);
-  background-color: red;
   background-image: var(--border);
   color: var(--panda-white);
   color-scheme: dark;

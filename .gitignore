@@ -1,4 +1,6 @@
 .env
 build
+dist
+.astro
 node_modules
 venv

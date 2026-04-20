@@ -1,8 +1,0 @@
-# Used by base.njk
-common:
-  - Posts and content are &copy; <current-year></current-year> Liam Newmarch. Theme can be found on <a href="https://github.com/liamnewmarch/blog">GitHub</a> under an MIT license 🎨
-  - This website was coded by hand and is built with <a href="https://www.11ty.dev">Eleventy</a> 🩵
-  - No AI was used in the creation of this blog 🤖
-
-# Used by posts/index.njk
-post: If you enjoyed this article let me know! <a href="/contact/">Check the contact page</a> to see where you can find me on the web

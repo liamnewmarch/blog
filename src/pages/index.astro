@@ -1,19 +1,11 @@
 ---
 import Image from 'astro/components/Image.astro'
 import Base from '../layouts/Base.astro'
-import { /* getCollection, */ getEntry, render } from 'astro:content'
-// import { formatDate } from '../utils/date.js'
+import { getEntry, render } from 'astro:content'
 
 const index = await getEntry('pages', 'index')
 if (!index) throw new Error('Failed to load index page content')
 const { Content: Bio } = await render(index)
-// const pageLinks = index.data.pages ?? []
-
-// const allPosts = await getCollection('posts')
-// const recentPosts = allPosts
-//   .filter(p => !p.data.unlisted)
-//   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-//   .slice(0, 4)
 ---
 <Base>
   <Fragment slot="header">

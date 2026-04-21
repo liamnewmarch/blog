@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro'
 import { getEntry, render } from 'astro:content'
 
 const entry = await getEntry('pages', 'colophon')
+if (!entry) throw new Error('Failed to load colophon page content')
 const { Content } = await render(entry)
 ---
 <Base title={entry.data.title}>

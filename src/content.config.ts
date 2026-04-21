@@ -1,10 +1,11 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
+import { z } from 'zod'
 
 const pages = defineCollection({
   loader: glob({
     base: './content',
-    pattern: '*.md',
+    pattern: ['*.md', '*/index.md'],
   }),
   schema: z.object({
     title: z.string().optional(),

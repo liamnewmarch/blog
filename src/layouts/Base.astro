@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css'
+import '../static/css/index.css'
 
 const { title }: { title?: string } = Astro.props
 ---
@@ -15,7 +15,7 @@ const { title }: { title?: string } = Astro.props
     <link href="/humans.txt" rel="author">
     <link rel="alternate" type="application/rss" href="https://liam.nwmr.ch/feed.xml">
     <slot name="head" />
-    <script src="../scripts/current-year.ts"></script>
+    <script src="../static/js/index.ts"></script>
     {import.meta.env.PROD && (
       <script is:inline data-entity="liam.nwmr.ch" src="https://analytics.nwmr.ch/script.js" type="module"></script>
     )}
